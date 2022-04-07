@@ -68,7 +68,7 @@ So We will be Looking These Angular-Routing  features and Learn as we go on.
 7. Retrieving Query Parameters and Fragments from the URL through typescript code in Angular
 8. Setting up the Child Or Nested Roues using Childeren Key in routing module in the Angular
 9. Preserve or merge the query Parameter by forwording with querypramshandling in Angular
-
+10. Implement Custom 404 Page adding WildCard Route, redirect to option in the angular routing Module
 
 
 
