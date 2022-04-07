@@ -26,6 +26,20 @@ this.activatedRoute.params.subscribe((routedata:Params)=>{
  
   }
 })
+
+ //Below Function will listedn the route  queryParameter data Continuosly/reactively
+this.activatedRoute.queryParams.subscribe((queryParameterData)=>{
+console.log(queryParameterData)
+})
+
+ //Below Function will listedn the route  Fragment data Continuosly/reactively
+this.activatedRoute.fragment.subscribe((fragmentRouteData)=>{
+console.log(fragmentRouteData)
+})
+
+//Getting queryParameter and Fragment Data from the URL  
+console.log(this.activatedRoute.snapshot.queryParams)
+console.log(this.activatedRoute.snapshot.fragment)
 }
 
   ngOnInit(): void {

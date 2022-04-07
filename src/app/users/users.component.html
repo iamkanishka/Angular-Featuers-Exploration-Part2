@@ -14,3 +14,13 @@
     </button>
     <button class="btn btn-primary" (click)="gotoCategories()" >gotoCategory</button>
 </span>
+
+
+<!-- Simple Router Link with query Parameters with fragment -->
+<p>Simple Router Link with query Parameters with fragment</p>
+<div>
+    <a [routerLink]="['/user',2,'Shiva']" [queryParams]="{page:1,search:'kanishka'}" 
+    [fragment]="'load'"
+    >Get Details of Shiva with
+        queryParams, Fragment </a>
+</div>

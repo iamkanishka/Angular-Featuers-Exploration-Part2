@@ -65,7 +65,7 @@ So We will be Looking These features and Learn as we go on.
 4. Passing and Fetching Parameter to Routes using ActivatedRoute snapshot in Angular
 5. Fetch Route Parameters Reactively using Params Subscrible with Activated Route in Angular
 6. Passing Query Parameters and Fragments to the URL Route with the template and Program in Angular
-7. 
+7. Retrieving Query Parameters and Fragments from the URL through typescript code in Angular
 
 
 
