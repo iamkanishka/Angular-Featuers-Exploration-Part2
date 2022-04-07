@@ -9,8 +9,13 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'category', component: CategoriesComponent },
 
-  { path: 'users', component: UsersComponent },
-  { path: 'user/:id/:name', component: UserComponent },
+  // { path: 'users', component: UsersComponent },
+  // { path: 'user/:id/:name', component: UserComponent },
+  
+//Making Above Routes to Nested Routes 
+  { path: 'users', component: UsersComponent,children:[{
+    path: 'user/:id/:name', component: UserComponent 
+ }] }
 
 
 ];

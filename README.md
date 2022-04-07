@@ -57,7 +57,7 @@ Create high-performance, complex choreographies and animation timelines with ver
 12. Accessibility
 Create accessible applications with ARIA-enabled components, developer guides, and built-in a11y test infrastructure.
 
-So We will be Looking These features and Learn as we go on.
+So We will be Looking These Angular-Routing  features and Learn as we go on.
 
 1. Introduction to Angular Routing Setup and Load routes with Router Module in Angular
 2. Navigating Links in the Page using  RouterLink in the angular   

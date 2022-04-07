@@ -24,3 +24,24 @@
     >Get Details of Shiva with
         queryParams, Fragment </a>
 </div>
+
+
+
+<p>Setting up the child or Nested Routes using children key</p>
+<ul class="nav flex-column">
+<li class="nav-item">
+    <a class="nav-link"  [routerLink]="['/users/user',1,'Rama']" >Get Rama Details</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link"  [routerLink]="['/users/user',2,'krishna']">Get Krishna Details</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link"  [routerLink]="['/users/user',3,'Vishnu']">Get Vishnu Details</a>
+</li>
+</ul>
+
+<!-- Every Nested Route Components should be rendered in the router Outlet   -->
+<div>
+    <router-outlet></router-outlet>
+</div>
+
