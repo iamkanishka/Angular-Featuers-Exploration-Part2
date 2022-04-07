@@ -4,6 +4,36 @@
 
 <!-- Note:- Once the Data is loaded in to teh Conmponent then we redirect to the same compoenent then with parametrs data 
     then it wont reflet the updated data in the route  -->
+<!-- Simple Router Link -->
 <div>
     <a [routerLink]="['/user',2,'Shiva']">Get Details of Shiva</a>
 </div>
+
+<!-- Simple Router Link with qury Parameters -->
+<div>
+    <a [routerLink]="['/user',2,'Shiva']" [queryParams]="{page:1,search:'kanishka'}">Get Details of Shiva with
+        queryParams </a>
+</div>
+
+
+<!-- Simple Router Link with query Parameters -->
+<div>
+    <a [routerLink]="['/user',2,'Shiva']" [queryParams]="{page:1,search:'kanishka'}">Get Details of Shiva with
+        queryParams </a>
+</div>
+
+<!-- Simple Router Link with query Parameters with fragment -->
+<div>
+    <a [routerLink]="['/user',2,'Shiva']" [queryParams]="{page:1,search:'kanishka'}" 
+    [fragment]="'load'"
+    >Get Details of Shiva with
+        queryParams, Fragment </a>
+</div>
+
+
+<!-- Simple Router  with query Parameters with fragment from TS file -->
+
+<span>
+    <button class="btn btn-primary" (click)="getRamaDetails()" >Get Rama Details
+    </button>
+</span>

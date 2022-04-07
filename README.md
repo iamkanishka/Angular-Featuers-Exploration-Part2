@@ -64,6 +64,8 @@ So We will be Looking These features and Learn as we go on.
 3. navigate Between Pages using router programmatically in Typescript 
 4. Passing and Fetching Parameter to Routes using ActivatedRoute snapshot in Angular
 5. Fetch Route Parameters Reactively using Params Subscrible with Activated Route in Angular
+6. Passing Query Parameters and Fragments to the URL Route with the template and Program in Angular
+7. 
 
 
 

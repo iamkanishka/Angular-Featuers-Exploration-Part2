@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class UserComponent implements OnInit {
 user!:{id:number,name:string}
-  constructor(private activatedRoute:ActivatedRoute) { 
+  constructor(private activatedRoute:ActivatedRoute,private router:Router) { 
   //Fetching Data from the Routes using Activated Route
    this.user={
    id: Number(this.activatedRoute.snapshot.params['id']),
@@ -30,5 +30,8 @@ this.activatedRoute.params.subscribe((routedata:Params)=>{
 
   ngOnInit(): void {
   }
-
+  //Simple Router  with query Parameters with fragment from TS file 
+  getRamaDetails(){
+    this.router.navigate(['/user',2,'Rama'],{queryParams:{page:1,search:'Rama'},fragment:'loading'})
+  }
 }
