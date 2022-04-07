@@ -70,6 +70,7 @@ So We will be Looking These Angular-Routing  features and Learn as we go on.
 9. Preserve or merge the query Parameter by forwording with querypramshandling in Angular
 10. Implement Custom 404 Page adding WildCard Route, redirect to option in the angular routing Module
 11. Separate all the Routing Configuration Code into the another file app-routing.module in teh Angular
+12. 
 
 
 
