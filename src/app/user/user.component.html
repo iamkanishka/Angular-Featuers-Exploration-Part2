@@ -1,3 +1,9 @@
 <p>user works!</p>
-
+<!-- Rendering Dtaa Frthced from the Routes -->
 <span>Id: {{user.id}}, Name: {{user.name}}</span>
+
+<!-- Note:- Once the Data is loaded in to teh Conmponent then we redirect to the same compoenent then with parametrs data 
+    then it wont reflet the updated data in the route  -->
+<div>
+    <a [routerLink]="['/user',2,'Shiva']">Get Details of Shiva</a>
+</div>
