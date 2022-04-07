@@ -1,0 +1,16 @@
+<p>users works!</p>
+<!-- Redirecting With RouterLink -->
+<div class="nav-item">
+    <a class="nav-link" routerLinkActive="active" [routerLink]="['/']">Home</a>
+</div>
+
+<div class="nav-item">
+    <a class="nav-link" routerLinkActive="active" [routerLink]="['/category']">Category</a>
+</div>
+<!--  -->
+
+<span>
+    <button class="btn btn-primary" (click)="gotousers()" > gotohome 
+    </button>
+    <button class="btn btn-primary" (click)="gotoCategories()" >gotoCategory</button>
+</span>
