@@ -62,6 +62,7 @@ So We will be Looking These features and Learn as we go on.
 1. Introduction to Angular Routing Setup and Load routes with Router Module in Angular
 2. Navigating Links in the Page using  RouterLink in the angular   
 3. navigate Between Pages using router programmatically in Typescript 
+4. Passing and Fetching Parameter to Routes using ActivatedRoute snapshot in Angular
 
 
 
