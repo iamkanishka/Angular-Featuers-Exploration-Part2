@@ -48,4 +48,14 @@ console.log(this.activatedRoute.snapshot.fragment)
   getRamaDetails(){
     this.router.navigate(['/user',2,'Rama'],{queryParams:{page:1,search:'Rama'},fragment:'loading'})
   }
+
+  // Preserve or Merge teh Query Parameter by Forwording with queryparamshanling in Angular
+  oneditUser(){
+ this.router.navigate(['/users/user',this.user.id,this.user.name,'edit'],{
+   //You can preserve the queryParams to teh next route using queryParamsHandling:'preserve'
+   queryParamsHandling:'preserve',
+     //You can merge the queryParams to the next route using queryParamsHandling:'merge'
+    // queryParamsHandling:'merge'
+ })
+  }
 }

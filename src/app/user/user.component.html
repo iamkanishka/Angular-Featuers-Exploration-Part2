@@ -34,9 +34,27 @@
 </div>
 
 
+<p>Simple Router Link with query Parameters with fragment with queryparamshanling</p>
+<div>
+    <a [routerLink]="['/user',2,'Shiva']" [queryParams]="{page:1,search:'kanishka'}"  [queryParamsHandling]="'preserve'"
+    [fragment]="'load'"
+    >Get Details of Shiva with
+        queryParams, Fragment </a>
+</div>
+
 <!-- Simple Router  with query Parameters with fragment from TS file -->
 
 <span>
     <button class="btn btn-primary" (click)="getRamaDetails()" >Get Rama Details
     </button>
 </span>
+
+
+<!-- Preserve or Merge teh Query Parameter by Forwording with queryparamshanling in Angular -->
+<p>Preserve or Merge teh Query Parameter by Forwording with queryparamshanling in Angular</p>
+<span>
+    <button class="btn btn-primary" (click)="oneditUser()" >Edit User</button>
+
+</span>
+
+

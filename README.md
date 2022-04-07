@@ -67,6 +67,7 @@ So We will be Looking These Angular-Routing  features and Learn as we go on.
 6. Passing Query Parameters and Fragments to the URL Route with the template and Program in Angular
 7. Retrieving Query Parameters and Fragments from the URL through typescript code in Angular
 8. Setting up the Child Or Nested Roues using Childeren Key in routing module in the Angular
+9. Preserve or merge the query Parameter by forwording with querypramshandling in Angular
 
 
 
