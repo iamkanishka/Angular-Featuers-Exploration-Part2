@@ -1,15 +1,30 @@
 <div class="container">
   <div class="row">
+    <div class="col-md-12">
+      <!-- buttons to manages login state -->
+      <button class="btn btn-success" (click)="login()" >
+        Login
+      </button>
+      <button class="btn btn-danger" (click)="logout()">
+        Logout
+      </button>
+    </div>
+
+  </div>
+
+  <div class="row">
     <div class="col-lg-3">
       <ul class="nav flex-column nav-pills">
-      <li class="nav-item"> <a class="nav-link" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" [routerLink]="['']">home</a></li>
-      <li class="nav-item"> <a class="nav-link" routerLinkActive="active" [routerLink]="['/users']">Users</a></li>
-      <li class="nav-item"> <a  class="nav-link" routerLinkActive="active" [routerLink]="['/category']">Categories</a></li>
-      
-    </ul>
+        <li class="nav-item"> <a class="nav-link" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active"
+            [routerLink]="['']">home</a></li>
+        <li class="nav-item"> <a class="nav-link" routerLinkActive="active" [routerLink]="['/users']">Users</a></li>
+        <li class="nav-item"> <a class="nav-link" routerLinkActive="active" [routerLink]="['/category']">Categories</a>
+        </li>
+
+      </ul>
     </div>
     <div class="col-lg-3">
-   <router-outlet></router-outlet> 
+      <router-outlet></router-outlet>
     </div>
 
   </div>

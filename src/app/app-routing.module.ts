@@ -6,6 +6,9 @@ import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthguardGuard } from './Services/guards/authguard.guard';
+
+
 
 
 const routes: Routes = [
@@ -16,7 +19,7 @@ const routes: Routes = [
   // { path: 'user/:id/:name', component: UserComponent },
   
 //Making Above Routes to Nested Routes 
-  { path: 'users', component: UsersComponent,children:[
+  { path: 'users', component: UsersComponent,canActivate:[AuthguardGuard], children:[
     { path: 'user/:id/:name', component: UserComponent },
     { path: 'user/:id/:name/edit', component: EditUserComponent }
   

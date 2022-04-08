@@ -69,8 +69,8 @@ So We will be Looking These Angular-Routing  features and Learn as we go on.
 8. Setting up the Child Or Nested Roues using Childeren Key in routing module in the Angular
 9. Preserve or merge the query Parameter by forwording with querypramshandling in Angular
 10. Implement Custom 404 Page adding WildCard Route, redirect to option in the angular routing Module
-11. Separate all the Routing Configuration Code into the another file app-routing.module in teh Angular
-12. 
+11. Separate all the Routing Configuration Code into the another file app-routing.module in the Angular
+12. Introduction to Routing Guards. Implementation of canActivate Route Guard in the angular
 
 
 
