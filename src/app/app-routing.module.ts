@@ -7,6 +7,7 @@ import { UserComponent } from './user/user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthguardGuard } from './Services/guards/authguard.guard';
+import { DeactivateauthguardGuard } from './Services/guards/deactivateauthguard.guard';
 
 
 
@@ -27,7 +28,11 @@ const routes: Routes = [
   canActivateChild:[AuthguardGuard], 
   children:[
     { path: 'user/:id/:name', component: UserComponent },
-    { path: 'user/:id/:name/edit', component: EditUserComponent }
+    
+    //Note: - canDeactivate Works when theres a redirection from compoemnent A to  componenet B,
+    // canDeactivate gets triggered in the Component A when thers a redirection 
+
+  { path: 'user/:id/:name/edit', component: EditUserComponent,canDeactivate: [DeactivateauthguardGuard] }
   
   ] },
 
