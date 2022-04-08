@@ -71,6 +71,7 @@ So We will be Looking These Angular-Routing  features and Learn as we go on.
 10. Implement Custom 404 Page adding WildCard Route, redirect to option in the angular routing Module
 11. Separate all the Routing Configuration Code into the another file app-routing.module in the Angular
 12. Introduction to Routing Guards. Implementation of canActivate Route Guard in the angular
+13. Implementation canActictivate Route Guard for the Nested Child Routes in the Angular
 
 
 

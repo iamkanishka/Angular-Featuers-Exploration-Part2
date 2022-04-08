@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,6 +18,11 @@ export class AuthserviceService {
 
   }
   isAuthenticated(){
-    return this.isLoggedIn
+   // return this.isLoggedIn
+  return new Promise((resolve, reject)=>{
+     setTimeout(()=>{
+       resolve(this.isLoggedIn)
+     }, 1000)
+   })
   }
 }

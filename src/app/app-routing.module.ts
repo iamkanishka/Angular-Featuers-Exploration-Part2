@@ -19,7 +19,13 @@ const routes: Routes = [
   // { path: 'user/:id/:name', component: UserComponent },
   
 //Making Above Routes to Nested Routes 
-  { path: 'users', component: UsersComponent,canActivate:[AuthguardGuard], children:[
+  { path: 'users', component: UsersComponent,
+ //Note: - canActivate:[AuthguardGuard] will guard Parent-Chilren Components 
+  //canActivate:[AuthguardGuard],
+  
+  //Note: - canActivateChild:[AuthguardGuard] will guard Parent's Chilrens Components 
+  canActivateChild:[AuthguardGuard], 
+  children:[
     { path: 'user/:id/:name', component: UserComponent },
     { path: 'user/:id/:name/edit', component: EditUserComponent }
   
