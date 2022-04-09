@@ -87,6 +87,7 @@ Continuing with Angular RXJS Observables
 2. Catch Errors and Complete in rxjs custom Observable using observer.error and complete in angular
 3. Understand rxjs Operators in the observalbes before sending to the subscribe data in angular
 4. Apply multiple operators in teh rxjs Observables, know more about the operators in rxjs angular  
+5. UnderStand the subjects in th erxjs angular. Implement the Subject for cross-componenet communication
 
 
 # Follow the Below Steps

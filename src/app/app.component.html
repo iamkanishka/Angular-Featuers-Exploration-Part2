@@ -23,7 +23,12 @@
 
       </ul>
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-9">
+      <!-- Subject Demo -->
+      <div *ngIf="userAdded" >
+        User Added Button Clicked
+      </div>
+      <!-- Subjects Demo -->
       <router-outlet></router-outlet>
     </div>
 

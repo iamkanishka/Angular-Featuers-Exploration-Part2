@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserserviceService } from '../Services/userservice.service';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class UsersComponent implements OnInit {
 
-  constructor(private router:Router) {
+  constructor(private router:Router,private userserviceService:UserserviceService) {
 
   }
   ngOnInit(): void {
@@ -20,6 +21,12 @@ export class UsersComponent implements OnInit {
   }
   gotousers(){
     this.router.navigate(['/'])
+  }
+
+  onUserAddedClick(){
+
+    this.userserviceService.addUser()
+
   }
  
 }

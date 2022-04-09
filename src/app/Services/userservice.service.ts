@@ -1,9 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable,EventEmitter } from '@angular/core';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserserviceService {
+
+  userAddedEvent= new EventEmitter<Boolean>()
 
   constructor() { }
 
@@ -19,5 +22,9 @@ export class UserserviceService {
         name:'Krishna'
       }
     }
+  }
+
+  addUser(){
+    this.userAddedEvent.emit(true)
   }
 }

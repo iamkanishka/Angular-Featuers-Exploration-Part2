@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthserviceService } from './Services/authservice/authservice.service';
-AuthserviceService
+import { UserserviceService } from './Services/userservice.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,11 @@ AuthserviceService
 })
 export class AppComponent {
   title = 'angularroutingfeatures';
-  constructor(private authserviceService:AuthserviceService ){
-    
+  userAdded:boolean=false
+  constructor(private authserviceService:AuthserviceService,private userserviceService:UserserviceService ){
+    this.userserviceService.userAddedEvent.subscribe((res:boolean)=>{
+      this.userAdded=res
+    })
 
   }
   // button functions to manage login state of user, login and logout 
