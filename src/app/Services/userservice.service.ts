@@ -1,13 +1,16 @@
 import { Injectable,EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserserviceService {
+//Sending Data from Event Emitter
+ // userAddedEvent= new EventEmitter<Boolean>()
 
-  userAddedEvent= new EventEmitter<Boolean>()
-
+//Sending Data from Event Emitter
+ userAddedEvent= new  Subject<boolean>()
   constructor() { }
 
   getuser(id:string){
@@ -25,6 +28,10 @@ export class UserserviceService {
   }
 
   addUser(){
-    this.userAddedEvent.emit(true)
+  //Event Emitter
+    //  this.userAddedEvent.emit(true)
+
+      //Event Emitter
+     this.userAddedEvent.next(true)
   }
 }

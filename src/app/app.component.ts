@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
+import { Subject, Subscription } from 'rxjs';
 import { AuthserviceService } from './Services/authservice/authservice.service';
 import { UserserviceService } from './Services/userservice.service';
 
@@ -8,13 +9,22 @@ import { UserserviceService } from './Services/userservice.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy {
   title = 'angularroutingfeatures';
   userAdded:boolean=false
+
+  userAddedSubscription!:Subscription
+
   constructor(private authserviceService:AuthserviceService,private userserviceService:UserserviceService ){
-    this.userserviceService.userAddedEvent.subscribe((res:boolean)=>{
-      this.userAdded=res
-    })
+   // Getting Data from the EventEmitter
+    // this.userserviceService.userAddedEvent.subscribe((res:boolean)=>{
+    //   this.userAdded=res
+    // })
+
+   //Getting Data from the Subjects with subscription - 
+this.userAddedSubscription= this.userserviceService.userAddedEvent.subscribe(res=>{
+    this.userAdded=res
+  })
 
   }
   // button functions to manage login state of user, login and logout 
@@ -24,5 +34,8 @@ export class AppComponent {
   }
   logout(){
     this.authserviceService.logout()
+  }
+  ngOnDestroy(): void {
+    this.userAddedSubscription.unsubscribe()  
   }
 }
