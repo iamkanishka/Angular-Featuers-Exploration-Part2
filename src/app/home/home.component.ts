@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Data, Params } from '@angular/router';
 import { Subscription, interval, Observable, observable,} from 'rxjs';
-import { map} from 'rxjs/operators';
+import { filter, map} from 'rxjs/operators';
 
 
 
@@ -73,10 +73,10 @@ export class HomeComponent implements OnInit, OnDestroy{
 //     })
 
 
-
-   this.customcountObservableSubscription= this.customcountObservable.pipe(map((data:number)=>
+// We can hangle multiple filters in the pipe 
+   this.customcountObservableSubscription= this.customcountObservable.pipe(filter(data=>data>0),map((data:number)=>
    {
-     return 'count is ' + (data+1)
+     return 'count is ' + (data)
     }
    )).subscribe(data=>{
    console.log(data);

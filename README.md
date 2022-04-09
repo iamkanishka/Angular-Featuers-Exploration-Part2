@@ -86,6 +86,7 @@ Continuing with Angular RXJS Observables
 1. Understand the core of the Observable in rxjs, Need to subscribe and Unsubscribe in the angular
 2. Catch Errors and Complete in rxjs custom Observable using observer.error and complete in angular
 3. Understand rxjs Operators in the observalbes before sending to the subscribe data in angular
+4. Apply multiple operators in teh rxjs Observables, know more about the operators in rxjs angular  
 
 
 # Follow the Below Steps
