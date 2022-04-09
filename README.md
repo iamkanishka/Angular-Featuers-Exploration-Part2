@@ -79,7 +79,7 @@ So We will be Looking These Angular-Routing  features and Learn as we go on.
 15. Implementing canDeactivate Route Guard in the real-time scenario for the component
 16. Passsing Static Data to teh Route and Also Access the Static Data in the TypeScript
 17. Get Dynamic Data Before entering inti the component using the resolve Guard in the Angular
-
+18. How to Use Hash URLs as Fragments in the URL for the internal pages in the Angular routing
 
 
 
