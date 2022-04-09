@@ -92,6 +92,7 @@ Continuing with Angular RXJS Observables
 
 Continuing with Angular Forms 
 1. Template Driven Forms in Angular, get NgForm Object from the template to code in Angular
+2. Advantages of Using ViewChild in the Template Driven Form to get Form Object in angular
 
 
 # Follow the Below Steps
