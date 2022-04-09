@@ -9,6 +9,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AuthguardGuard } from './Services/guards/authguard.guard';
 import { DeactivateauthguardGuard } from './Services/guards/deactivateauthguard.guard';
 
+import { UserresolversResolver } from './Services/resolvers/userresolvers.resolver';
+
 
 
 
@@ -33,7 +35,10 @@ const routes: Routes = [
     //Note: - canDeactivate Works when theres a redirection from compoemnent A to  componenet B,
     // canDeactivate gets triggered in the Component A when thers a redirection 
 
-  { path: 'user/:id/:name/edit', component: EditUserComponent,canDeactivate: [DeactivateauthguardGuard] }
+    //Note: Using resolver is used to send the data to the components to before loading the respective componenet
+  { path: 'user/:id/:name/edit', component: EditUserComponent,canDeactivate: [DeactivateauthguardGuard] ,
+resolve:{user:UserresolversResolver}
+}
   
   ] },
 

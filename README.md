@@ -42,6 +42,9 @@ Command line tools: start building fast, add components and tests, then instantl
     1.  `ng g c <component_name>` Command for Creating Component
     2.  `ng g d <directive_name>` Command for Creating Directive
     3.  `ng g s <service_name>` Command for Creating Service
+    4.  `ng g g <guard_name>` Command for Creating Guard
+    5.  `ng g r <resolver_name>` Command for Creating Resolver
+    6.  
 
 
 9. IDEs
@@ -74,6 +77,8 @@ So We will be Looking These Angular-Routing  features and Learn as we go on.
 13. Implementation canActictivate Route Guard for the Nested Child Routes in the Angular
 14. Controlling Naviagtion with CanDeactivate Route Guard in the angular
 15. Implementing canDeactivate Route Guard in the real-time scenario for the component
+16. Passsing Static Data to teh Route and Also Access the Static Data in the TypeScript
+17. Get Dynamic Data Before entering inti the component using the resolve Guard in the Angular
 
 
 

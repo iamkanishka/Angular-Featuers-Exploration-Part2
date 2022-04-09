@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Data, Params } from '@angular/router';
 import { IDeactivateGuard } from '../Services/guards/deactivateauthguard.guard';
 
 
@@ -16,13 +16,28 @@ export class EditUserComponent implements OnInit, IDeactivateGuard {
 
 
   constructor(private activatedRoute:ActivatedRoute) { 
-    this.activatedRoute.params.subscribe((data:Params)=>{
-      this.user={
-        id:data['id'],
-        name:data['name']
-      }
-      this.editUserDetails= {...this.user}
-    })
+
+    
+    //Note: -This is resolver way of Getting Static Data from the router (if any api trigger has to be done, before initialting the component then this will )
+this.activatedRoute.data.subscribe((data:Data)=>{
+  console.log(data.user);
+  
+  this.user={
+    id:data.user.id,
+    name:data.user.name
+  }
+  this.editUserDetails= {...this.user}
+})
+
+
+    //Note: -This is normal way of Getting Static Data from the router
+    // this.activatedRoute.params.subscribe((data:Params)=>{
+    //   this.user={
+    //     id:data['id'],
+    //     name:data['name']
+    //   }
+    //   this.editUserDetails= {...this.user}
+    // })
   }
  
 
