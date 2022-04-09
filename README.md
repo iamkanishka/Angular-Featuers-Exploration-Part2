@@ -82,6 +82,11 @@ So We will be Looking These Angular-Routing  features and Learn as we go on.
 18. How to Use Hash URLs as Fragments in the URL for the internal pages in the Angular routing
 
 
+Continuing with Angular RXJS Observables
+1. Understand the core of the Observable in rxjs, Need to subscribe and Unsubscribe in teh angular
+2. Catch Errors and Complete in rxjs custom Observable using observer.error and complete in angular
+3. 
+
 
 # Follow the Below Steps
 
