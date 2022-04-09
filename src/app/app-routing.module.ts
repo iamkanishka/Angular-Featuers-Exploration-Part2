@@ -10,6 +10,7 @@ import { AuthguardGuard } from './Services/guards/authguard.guard';
 import { DeactivateauthguardGuard } from './Services/guards/deactivateauthguard.guard';
 
 import { UserresolversResolver } from './Services/resolvers/userresolvers.resolver';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 
 
 
@@ -41,6 +42,9 @@ resolve:{user:UserresolversResolver}
 }
   
   ] },
+
+  { path: 'forms', component: TemplateDrivenFormComponent },
+
 
   // Note:- Please Add not-found Component Route in the End of the Route, if you add it in the first it will redirect not found since it 
   // it has been added in the first all down below are considered unidentified routes

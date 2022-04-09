@@ -9,8 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +20,15 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     UserComponent,
     EditUserComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TemplateDrivenFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
