@@ -94,7 +94,8 @@ Continuing with Angular Forms
 1. Template Driven Forms in Angular, get NgForm Object from the template to code in Angular
 2. Advantages of Using ViewChild in the Template Driven Form to get Form Object in angular
 3. Explore the Form Object in the Template driven Forms in teh Angular
-4.  
+4. Validations for the Template Droven Forms. Show Validation Messages for the From in Angular
+5. 
 
 
 # Follow the Below Steps

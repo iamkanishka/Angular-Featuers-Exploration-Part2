@@ -10,12 +10,17 @@
                 <form (ngSubmit)="onSubmit()" #f="ngForm">
             <div class="form-group">
                 <label for="userName">User Name</label>
-                <input type="text" class="form-control" id="userName" name="userName" (input)="checkData()" ngModel>
+                <input type="text" class="form-control" id="userName" name="userName"ngModel required>
             </div>
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" id="email" name="email" ngModel>
+         <!-- You can acces form control in this also -->
+                <!-- <input type="text" class="form-control" id="email" name="email" ngModel #email="ngModel" required email>
+           <span class="help-text" *ngIf="!email.valid && email.touched" >Please Enter valid email</span>
+               -->
+                <input type="text" class="form-control" id="email" name="email" ngModel required email>
+           <span class="help-text" *ngIf="f.controls.email && !f.controls.email.valid && f.controls.email.touched" >Please Enter valid email</span>
             </div>
 
             <div class="form-group">
@@ -29,7 +34,7 @@
             </div>
 
             <div class="mt-2">
-                <button class="btn btn-primary">Add user</button>
+                <button class="btn btn-primary" [disabled]="!f.valid">Add user</button>
             </div>
         </form>
         </div>
