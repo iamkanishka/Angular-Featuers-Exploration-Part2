@@ -13,7 +13,8 @@ import { DeactivateauthguardGuard } from './Services/guards/deactivateauthguard.
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  //Sending Static Data in teh Route
+  { path: '', component: HomeComponent ,data:{page:1,search:'kanishka'} },
   { path: 'category', component: CategoriesComponent },
 
   // { path: 'users', component: UsersComponent },
