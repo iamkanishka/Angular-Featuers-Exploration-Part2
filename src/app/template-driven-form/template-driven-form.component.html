@@ -2,6 +2,13 @@
     <div class="row">
      
         <div class="col-md-12">
+<!-- Prefilling Data in the Form using setValue and patchvalue -->
+            <div>
+                <button class="btn btn-warning" (click)="prefillsetValue()" >Fill set Values</button>
+                <button class="btn btn-warning" (click)="prefillpatchValue()" >Fill patch Values</button>
+
+                 </div>
+
             <!-- Initiating the identtifier in the form and sending as a paramater  -->
             <!-- <form (ngSubmit)="onSubmit()" #f="ngForm"> -->
 
@@ -56,6 +63,8 @@
                 <button class="btn btn-primary" [disabled]="!f.valid">Add user</button>
             </div>
         </form>
-        </div>
+
+     
     </div>
+</div>
 </div>

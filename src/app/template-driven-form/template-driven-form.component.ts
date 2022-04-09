@@ -31,5 +31,28 @@ checkData(){
 console.log(this.signUpform);
 
 }
+prefillsetValue(){
+  this.signUpform.form.setValue({
+    userData:{
+      email:"kanishkabc123@gmail.com",
+      userName:"kanishka"
+    },
+    gender:"male",
+    about:"Hi this is about section"
+
+  })
+}
+
+prefillpatchValue(){
+  this.signUpform.form.patchValue({
+    userData:{
+      email:"kanishkanaik97@gmail.com",
+      userName:"kanishka Hotshot"
+    },
+ 
+
+  })
+}
+
 
 }
