@@ -96,7 +96,7 @@ Continuing with Angular Forms
 3. Explore the Form Object in the Template driven Forms in teh Angular
 4. Validations for the Template Droven Forms. Show Validation Messages for the From in Angular
 5. Using ngModel for Two Way and one way Binding to Populate Data in template Driven Forms
-6. 
+6. NgModelGroup - Grouping the From Controls in template Driven Forms using ngModelGroup in angular
 
 
 # Follow the Below Steps

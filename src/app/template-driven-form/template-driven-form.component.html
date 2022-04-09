@@ -8,6 +8,12 @@
             <!-- Initiating the identtifier in the form and retriving from the viewchild  -->
 
                 <form (ngSubmit)="onSubmit()" #f="ngForm">
+             
+                    <!-- We can initiate the ngModelGroup in two Different ways -->
+                   <!-- <div ngModelGroup="userData">  -->
+                       <div *ngIf="!userData.valid && userData.touched" > User Data is Invalid</div>
+                   <div ngModelGroup="userData" #userData="ngModelGroup"> 
+
             <div class="form-group">
                 <label for="userName">User Name</label>
                 <input type="text" class="form-control" id="userName" name="userName"ngModel required>
@@ -22,6 +28,7 @@
                 <input type="text" class="form-control" id="email" name="email" ngModel required email>
            <span class="help-text" *ngIf="f.controls.email && !f.controls.email.valid && f.controls.email.touched" >Please Enter valid email</span>
             </div>
+        </div>
 
             <div class="form-group">
                 <label for="gender">Gender</label>
