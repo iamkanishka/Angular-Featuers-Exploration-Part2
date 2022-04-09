@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Data, Params } from '@angular/router';
-import { Subscription, interval, Observable, observable} from 'rxjs';
+import { Subscription, interval, Observable, observable,} from 'rxjs';
+import { map} from 'rxjs/operators';
+
 
 
 
@@ -42,7 +44,7 @@ export class HomeComponent implements OnInit, OnDestroy{
     // })
 
 
- //Creating Custom Varaible with error handle, with complete
+ //Creating Custom Observable with error handle, with complete
  this.customcountObservable = Observable.create((observer: any)=>{
   let count = 0
     setInterval(()=>{
@@ -58,7 +60,25 @@ export class HomeComponent implements OnInit, OnDestroy{
   })
 
 
-   this.customcountObservableSubscription= this.customcountObservable.subscribe(data=>{
+ //Handling Custom Observable with error handle, with complete
+//    this.customcountObservableSubscription= this.customcountObservable.subscribe(data=>{
+//    console.log(data);
+   
+//     },(error)=>{
+//       console.log(error);
+      
+//     },()=>{
+// console.log('completed');
+
+//     })
+
+
+
+   this.customcountObservableSubscription= this.customcountObservable.pipe(map((data:number)=>
+   {
+     return 'count is ' + (data+1)
+    }
+   )).subscribe(data=>{
    console.log(data);
    
     },(error)=>{
@@ -68,6 +88,8 @@ export class HomeComponent implements OnInit, OnDestroy{
 console.log('completed');
 
     })
+
+
 
   }
 

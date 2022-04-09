@@ -83,9 +83,9 @@ So We will be Looking These Angular-Routing  features and Learn as we go on.
 
 
 Continuing with Angular RXJS Observables
-1. Understand the core of the Observable in rxjs, Need to subscribe and Unsubscribe in teh angular
+1. Understand the core of the Observable in rxjs, Need to subscribe and Unsubscribe in the angular
 2. Catch Errors and Complete in rxjs custom Observable using observer.error and complete in angular
-3. 
+3. Understand rxjs Operators in the observalbes before sending to the subscribe data in angular
 
 
 # Follow the Below Steps
