@@ -12,6 +12,13 @@ export class TemplateDrivenFormComponent implements OnInit {
 
   gender='male'
   about=''
+  submitted:boolean=false
+  user={
+    userName:'',
+    email:'',
+    gender:'',
+    about:''
+  }
   constructor() { }
 
   ngOnInit(): void {
@@ -54,5 +61,19 @@ prefillpatchValue(){
   })
 }
 
+
+onFomSubmit(){
+  this.submitted=true;
+  this.user.userName=this.signUpform.value.userData.userName
+  this.user.email=this.signUpform.value.userData.email
+  this.user.gender=this.signUpform.value.gender 
+   this.user.about=this.signUpform.value.about
+   console.log(this.user)
+   this.reset()
+}
+
+reset(){
+  this.signUpform.reset()
+}
 
 }

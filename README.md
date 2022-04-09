@@ -98,6 +98,7 @@ Continuing with Angular Forms
 5. Using ngModel for Two Way and one way Binding to Populate Data in template Driven Forms
 6. NgModelGroup - Grouping the From Controls in template Driven Forms using ngModelGroup in angular
 7. setValue and patch Value for Populating Form Elements in the Template Driven form in Angular
+8. Get and Reset the form Data Controlls in the template Driven Forms in the Angular
 
 
 # Follow the Below Steps
