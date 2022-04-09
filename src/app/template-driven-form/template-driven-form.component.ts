@@ -10,6 +10,8 @@ export class TemplateDrivenFormComponent implements OnInit {
 
   @ViewChild('f') signUpform!:NgForm
 
+  gender='male'
+  about=''
   constructor() { }
 
   ngOnInit(): void {

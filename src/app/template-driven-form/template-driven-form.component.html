@@ -25,13 +25,25 @@
 
             <div class="form-group">
                 <label for="gender">Gender</label>
-               <select class="form-control"  id="gender" name="gender" ngModel>
-                   <option value="male">Male</option>
+               <!-- <select class="form-control"  id="gender" name="gender" ngModel="male"> -->
+
+                <!-- Select with ngModel with Propert binding -->
+                <select class="form-control"  id="gender" name="gender" [ngModel]="gender">
+              
+                <option value="male">Male</option>
                    <option value="female">Female</option>
 
                </select>
           
             </div>
+
+            <div class="form-group">
+                <label for="email">About</label>
+       
+                <textarea type="text" class="form-control" id="about" rows="3" name="about" [(ngModel)]="about" required></textarea>
+         <span> {{about}} </span> 
+            </div>
+
 
             <div class="mt-2">
                 <button class="btn btn-primary" [disabled]="!f.valid">Add user</button>
