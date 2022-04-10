@@ -104,6 +104,7 @@ Template Driven Form
 
 Reactive Form
 1. Introduction to reactive Forms Approach. Create FormGroup and FormContreol with code in Angular 
+2. Attach the HTML File using the FormGroup with FormControlName using Reactive Forms in Angular
 
 
 # Follow the Below Steps

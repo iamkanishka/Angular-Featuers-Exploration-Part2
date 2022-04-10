@@ -26,6 +26,8 @@ export class ReavtiveFormsComponent implements OnInit {
 
 
   onFomSubmit(){
+   console.log(this.signUpForm);
+    
    
      this.reset()
   }
