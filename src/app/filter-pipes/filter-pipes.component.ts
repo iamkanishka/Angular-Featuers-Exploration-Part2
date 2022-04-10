@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterPipesComponent implements OnInit {
 
-  filterstring!:string
+  filterstring:string=''
   users =[{
     name:'kanishka',
     joinedDate : new Date(15,3,2017)
