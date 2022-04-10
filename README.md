@@ -119,7 +119,8 @@ HTTP Request
 1. Introduction to Http Requests, Make a Http Post Request Call through HttpClientModule -  Angular
 2. Make Get Requests and use RXjs Operators to transform the respiosne in the Angular 
 3. Define the Tyoes of HttpClient Requests data using in the interface and Generic Tyoes in the Angular
-4. 
+4. Using Service for the Http request with HttpClient. Communicates Services and Componenets in Angular
+5. Implement HTTP Delete rtequest with HttpClient in Angular
 
 
 

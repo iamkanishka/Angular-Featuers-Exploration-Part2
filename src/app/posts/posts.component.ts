@@ -59,5 +59,9 @@ posts:Posts[]=[]
     })
 
   }
+  clearPosts(){
+    this.postserviceService.clearPosts()
+    this.getPosts()
+  }
 
 }

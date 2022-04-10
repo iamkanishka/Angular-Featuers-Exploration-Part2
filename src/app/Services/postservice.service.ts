@@ -18,12 +18,7 @@ export class PostserviceService {
   addPost(postdata:{[key:string]:Posts}){
 
   return   this.httpClient.post<{[key:string]:Posts}>('https://ng-complete-guide-2abc1-default-rtdb.firebaseio.com/post.json',postdata)
-    // .subscribe((response)=>{
-    //   console.log(response)
-    // this.getPosts()
-
-    // })
-
+  
   }
 
   getPosts(){
@@ -36,13 +31,16 @@ return  this.httpClient.get<{[key:string]:Posts}>('https://ng-complete-guide-2ab
       }
       return posts
     }))
-    // .subscribe((response)=>{
-    //   console.log(response)
-    //   this.posts=response
-    // },(error)=>{
-    //    console.log(error)
-    // })
 
+
+  }
+
+  clearPosts(){
+    return   this.httpClient.delete('https://ng-complete-guide-2abc1-default-rtdb.firebaseio.com/post.json').subscribe((response)=>{
+      console.log(response);
+      
+    })
+  
   }
 
 }
