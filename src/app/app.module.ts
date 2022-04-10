@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ReavtiveFormsComponent } from './reavtive-forms/reavtive-forms.component';
 import { FilterPipesComponent } from './filter-pipes/filter-pipes.component';
+import { ShortwordsPipe } from './Pipes/shortwords.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FilterPipesComponent } from './filter-pipes/filter-pipes.component';
     PageNotFoundComponent,
     TemplateDrivenFormComponent,
     ReavtiveFormsComponent,
-    FilterPipesComponent
+    FilterPipesComponent,
+    ShortwordsPipe
   ],
   imports: [
     BrowserModule,

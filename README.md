@@ -44,7 +44,7 @@ Command line tools: start building fast, add components and tests, then instantl
     3.  `ng g s <service_name>` Command for Creating Service
     4.  `ng g g <guard_name>` Command for Creating Guard
     5.  `ng g r <resolver_name>` Command for Creating Resolver
-    6.  
+    6.  `ng g p <Pipe_name>` Command for Creating Pipe
 
 
 9. IDEs
@@ -111,7 +111,7 @@ Reactive Form
 
 Pipes
 1. Pipes in Angular, Chaining Multiple Pipes, parameterized Pipes in the Angular
-2.
+2. Create a Custom Pipe and pass Parameters to the Pipe in Angular using Transaform method
 
 
 
