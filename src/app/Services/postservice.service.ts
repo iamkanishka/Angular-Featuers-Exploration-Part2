@@ -21,7 +21,7 @@ export class PostserviceService {
       .get<{ [key: string]: Posts }>(
         'https://ng-complete-guide-2abc1-default-rtdb.firebaseio.com/post.json',{
           headers:new HttpHeaders({
-            'custom-header':'Kanishka'
+            'custom-header':'Get Request'
           })
         }
       )
@@ -41,7 +41,7 @@ export class PostserviceService {
       .delete(
         'https://ng-complete-guide-2abc1-default-rtdb.firebaseio.com/post.json',{
           headers:new HttpHeaders({
-            'custom-header':'Kanishka'
+            'custom-header':'Post Request'
           })})
       .subscribe((response) => {
         console.log(response);
