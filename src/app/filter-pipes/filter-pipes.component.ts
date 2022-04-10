@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterPipesComponent implements OnInit {
 
+  filterstring!:string
   users =[{
     name:'kanishka',
     joinedDate : new Date(15,3,2017)
@@ -24,6 +25,9 @@ export class FilterPipesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+  onAdduser(){
+    this.users.push({name:'Vishnu',joinedDate:new Date(12,12,2001)})
   }
 
 }

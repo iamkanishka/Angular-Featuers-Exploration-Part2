@@ -112,6 +112,8 @@ Reactive Form
 Pipes
 1. Pipes in Angular, Chaining Multiple Pipes, parameterized Pipes in the Angular
 2. Create a Custom Pipe and pass Parameters to the Pipe in Angular using Transaform method
+3. Creating  Filter Pipe in teh Angular, Filter the list of Data with Search String in Angular
+4. Pure and Impure Pipes, Differences Betwen the pure pipe and impure pipe in teh Angular
 
 
 

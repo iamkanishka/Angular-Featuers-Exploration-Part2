@@ -1,8 +1,21 @@
 <div class="container">
+
     <div class="row">
         <div class="col-md-12">
-            <div *ngFor="let user of users" >
-            <div>Name: {{user.name | shortwords:2 }}</div>
+            <button class="btn btn-pimary" (click)="onAdduser()" >Add user</button>
+       
+        </div>
+        </div>
+    <div class="row">
+        <div class="col-md-12">
+            <input type="text" class="form-control" [(ngModel)]="filterstring">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div *ngFor="let user of users | filterpipe:filterstring" >
+            <div>Name: {{user.name | shortwords:10 }}</div>
             <div>Name: {{user.joinedDate |  date:'fullDate' | uppercase}}</div>
 
             </div>
