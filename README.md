@@ -122,7 +122,7 @@ HTTP Request
 4. Using Service for the Http request with HttpClient. Communicates Services and Componenets in Angular
 5. Implement HTTP Delete rtequest with HttpClient in Angular
 6. Error Handling in teh Http Request Calls with HTTPClinet - Angular
-7. 
+7. Sending HTTP Headers in the API Request Call with HTTPClinet in The Angular
 
 
 

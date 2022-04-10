@@ -1,46 +1,50 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import {Posts} from '../posts/posts.model'
+import { Posts } from '../posts/posts.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PostserviceService {
+  constructor(private httpClient: HttpClient) {}
 
-
-
-
-  constructor(private httpClient:HttpClient) { }
-
-
-
-  addPost(postdata:{[key:string]:Posts}){
-
-  return   this.httpClient.post<{[key:string]:Posts}>('https://ng-complete-guide-2abc1-default-rtdb.firebaseio.com/post.json',postdata)
-  
+  addPost(postdata: { [key: string]: Posts }) {
+    return this.httpClient.post<{ [key: string]: Posts }>(
+      'https://ng-complete-guide-2abc1-default-rtdb.firebaseio.com/post.json',
+      postdata
+    );
   }
 
-  getPosts(){
-  
-return  this.httpClient.get<{[key:string]:Posts}>('https://ng-complete-guide-2abc1-default-rtdb.firebaseio.com/post.json').
-    pipe(map((response)=>{
-      let posts = []
-      for(let key in response){
-      posts.push({...response[key],key})
-      }
-      return posts
-    }))
-
-
+  getPosts() {
+    return this.httpClient
+      .get<{ [key: string]: Posts }>(
+        'https://ng-complete-guide-2abc1-default-rtdb.firebaseio.com/post.json',{
+          headers:new HttpHeaders({
+            'custom-header':'Kanishka'
+          })
+        }
+      )
+      .pipe(
+        map((response) => {
+          let posts = [];
+          for (let key in response) {
+            posts.push({ ...response[key], key });
+          }
+          return posts;
+        })
+      );
   }
 
-  clearPosts(){
-    return   this.httpClient.delete('https://ng-complete-guide-2abc1-default-rtdb.firebaseio.com/post.json').subscribe((response)=>{
-      console.log(response);
-      
-    })
-  
+  clearPosts() {
+    return this.httpClient
+      .delete(
+        'https://ng-complete-guide-2abc1-default-rtdb.firebaseio.com/post.json',{
+          headers:new HttpHeaders({
+            'custom-header':'Kanishka'
+          })})
+      .subscribe((response) => {
+        console.log(response);
+      });
   }
-
 }
