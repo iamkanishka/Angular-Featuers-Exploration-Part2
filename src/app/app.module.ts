@@ -11,6 +11,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { ReavtiveFormsComponent } from './reavtive-forms/reavtive-forms.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
     UserComponent,
     EditUserComponent,
     PageNotFoundComponent,
-    TemplateDrivenFormComponent
+    TemplateDrivenFormComponent,
+    ReavtiveFormsComponent
   ],
   imports: [
     BrowserModule,

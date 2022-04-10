@@ -90,7 +90,9 @@ Continuing with Angular RXJS Observables
 5. UnderStand the subjects in th erxjs angular. Implement the Subject for cross-componenet communication
 
 
-Continuing with Angular Forms 
+Continuing with Angular Forms(Template Driven and Reactive ) 
+
+Template Driven Form
 1. Template Driven Forms in Angular, get NgForm Object from the template to code in Angular
 2. Advantages of Using ViewChild in the Template Driven Form to get Form Object in angular
 3. Explore the Form Object in the Template driven Forms in teh Angular
@@ -99,6 +101,9 @@ Continuing with Angular Forms
 6. NgModelGroup - Grouping the From Controls in template Driven Forms using ngModelGroup in angular
 7. setValue and patch Value for Populating Form Elements in the Template Driven form in Angular
 8. Get and Reset the form Data Controlls in the template Driven Forms in the Angular
+
+Reactive Form
+1. Introduction to reactive Forms Approach. Create FormGroup and FormContreol with code in Angular 
 
 
 # Follow the Below Steps
