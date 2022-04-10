@@ -114,7 +114,10 @@ Pipes
 2. Create a Custom Pipe and pass Parameters to the Pipe in Angular using Transaform method
 3. Creating  Filter Pipe in teh Angular, Filter the list of Data with Search String in Angular
 4. Pure and Impure Pipes, Differences Betwen the pure pipe and impure pipe in the Angular
-5. 
+
+HTTP Request
+1. Introduction to Http Requests, Make a Http Post Request Call through HttpClientModule -  Angular
+2. Make Get Requests and use RXjs Operators to transform the respiosne in the Angular
 
 
 

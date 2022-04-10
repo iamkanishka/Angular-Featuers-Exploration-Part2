@@ -15,7 +15,8 @@ import { ReavtiveFormsComponent } from './reavtive-forms/reavtive-forms.componen
 import { FilterPipesComponent } from './filter-pipes/filter-pipes.component';
 import { ShortwordsPipe } from './Pipes/shortwords.pipe';
 import { FilterpipePipe } from './Pipes/filterpipe.pipe';
-
+import { PostsComponent } from './posts/posts.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,13 +30,15 @@ import { FilterpipePipe } from './Pipes/filterpipe.pipe';
     ReavtiveFormsComponent,
     FilterPipesComponent,
     ShortwordsPipe,
-    FilterpipePipe
+    FilterpipePipe,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-ReactiveFormsModule
+ReactiveFormsModule,
+HttpClientModule
 
   ],
   providers: [],

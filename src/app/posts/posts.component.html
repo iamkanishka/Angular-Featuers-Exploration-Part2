@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="postForm" >
+              <div class="form-group">
+                  <label for="title">Title</label>
+                  <input type="text" class="form-control" formControlName="title">
+                  <span class="help-block" *ngIf="!postFormControls.title.valid && postFormControls.title.touched" > Please Enter Tiltle </span>
+                
+              </div>
+
+              <div class="form-group">
+                <label for="title">Description</label>
+              <textarea type="text" rows="3" class="form-control" formControlName="description"></textarea>
+                <span class="help-block" *ngIf="!postFormControls.description.valid && postFormControls.description.touched" > Please Enter  Description </span>
+          
+            </div>
+
+            <div class="my-2">
+                <button class="btn btn-primary" [disabled]="this.postForm.invalid" (click)="addPost()" >Add Post</button>
+            </div>
+            </form>
+
+          <h3>Posts</h3>
+          <div *ngFor="let item of posts" >
+              <div>
+                 Title:  {{item.title}}
+              </div>
+              <div>
+             Description:   {{item.description}}
+            </div>
+          </div>
+
+        </div>
+    </div>
+</div>
