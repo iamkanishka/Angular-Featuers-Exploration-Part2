@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import {Posts} from './posts.model'
+import { PostserviceService } from '../Services/postservice.service';
+
 
 
 @Component({
@@ -14,7 +16,7 @@ export class PostsComponent implements OnInit {
 
 posts:Posts[]=[]
   postForm:FormGroup
-  constructor(private httpClient:HttpClient) { 
+  constructor(private httpClient:HttpClient, private postserviceService:PostserviceService) { 
     this.postForm= new FormGroup({
       title:new FormControl(null,[Validators.required]),
       description:new FormControl(null,[Validators.required])
@@ -31,29 +33,29 @@ posts:Posts[]=[]
 
   addPost(){
     var postdata = this.postForm.value;
-    this.httpClient.post<{[key:string]:Posts}>('https://ng-complete-guide-2abc1-default-rtdb.firebaseio.com/post.json',postdata)
-    .subscribe((response)=>{
+   this.postserviceService.addPost(postdata).subscribe((response)=>{
       console.log(response)
     this.getPosts()
 
+    },(error)=>{
+ console.log(error);
+ 
+    },()=>{
+      console.log('add complete');
+      
     })
 
   }
 
   getPosts(){
-  
-    this.httpClient.get<{[key:string]:Posts}>('https://ng-complete-guide-2abc1-default-rtdb.firebaseio.com/post.json').
-    pipe(map((response)=>{
-      let posts = []
-      for(let key in response){
-      posts.push({...response[key],key})
-      }
-      return posts
-    })).subscribe((response)=>{
+    this.postserviceService.getPosts().subscribe((response)=>{
       console.log(response)
       this.posts=response
     },(error)=>{
        console.log(error)
+    },()=>{
+      console.log('get complete');
+      
     })
 
   }
