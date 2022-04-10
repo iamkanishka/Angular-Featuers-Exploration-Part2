@@ -12,7 +12,11 @@ export class PostserviceService {
   addPost(postdata: { [key: string]: Posts }) {
     return this.httpClient.post<{ [key: string]: Posts }>(
       'https://ng-complete-guide-2abc1-default-rtdb.firebaseio.com/post.json',
-      postdata
+      postdata,{
+        headers:new HttpHeaders({
+          'custom-header':'Post Request'
+        })
+      }
     );
   }
 
@@ -41,8 +45,9 @@ export class PostserviceService {
       .delete(
         'https://ng-complete-guide-2abc1-default-rtdb.firebaseio.com/post.json',{
           headers:new HttpHeaders({
-            'custom-header':'Post Request'
-          })})
+            'custom-header':'Delete Request'
+          })
+        })
       .subscribe((response) => {
         console.log(response);
       });
