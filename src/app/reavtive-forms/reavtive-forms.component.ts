@@ -1,64 +1,68 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reavtive-forms',
   templateUrl: './reavtive-forms.component.html',
-  styleUrls: ['./reavtive-forms.component.scss']
+  styleUrls: ['./reavtive-forms.component.scss'],
 })
 export class ReavtiveFormsComponent implements OnInit {
+  genders = ['Male', 'Female'];
 
-  genders=['Male','Female']
-
-  signUpForm:FormGroup
+  signUpForm: FormGroup;
 
   constructor() {
     //Single User Form Group
-  //   this.signUpForm =new FormGroup({
-  //     userName: new FormControl('',Validators.required),
-  //     email: new FormControl('',[Validators.required,Validators.email]),
-  //     gender: new FormControl('',)
-  // })
+    //   this.signUpForm =new FormGroup({
+    //     userName: new FormControl('',Validators.required),
+    //     email: new FormControl('',[Validators.required,Validators.email]),
+    //     gender: new FormControl('',)
+    // })
 
-  //Using FormGroup in a Form Group
-  this.signUpForm =new FormGroup({
+    //Using FormGroup in a Form Group
+    // this.signUpForm = new FormGroup({
+    //   userData :new FormGroup({
+    //     userName: new FormControl('', Validators.required),
+    //     email: new FormControl('', [Validators.required, Validators.email]),
 
-      userName: new FormControl('',Validators.required),
-      email: new FormControl('',[Validators.required,Validators.email]),
- 
+    //   }),
 
-    gender: new FormControl('',)
-})
+    //   gender: new FormControl(''),
+    // });
 
+    this.signUpForm = new FormGroup({
+      userName: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
 
-
-   }
-
-  get signUpFormControls(){
-    return this.signUpForm.controls
+      gender: new FormControl(''),
+      hobbies:new FormArray([])
+    });
   }
 
+  get signUpFormhobbiesControls() {
+    return (<FormArray>this.signUpForm.get('hobbies')).controls 
+  }
+
+
+  get signUpFormControls() {
+    return this.signUpForm.controls;
+  }
 
   ngOnInit(): void {
     console.log(this.signUpForm);
     console.log(this.signUpForm.controls.userData);
-     
-    
-  
-    
   }
 
-
-
-  onFomSubmit(){
-   console.log(this.signUpForm);
-    
-   
-     this.reset()
-  }
-  
-  reset(){
-   
+  onaddForms() {
+    const control = new FormControl(null, [Validators.required]);
+    (<FormArray>this.signUpForm.get('hobbies')).push(control) 
   }
 
+  onFomSubmit() {
+    console.log(this.signUpForm);
+
+    this.reset();
+  }
+
+  reset() {}
 }
