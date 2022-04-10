@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reavtive-forms',
@@ -14,11 +14,15 @@ export class ReavtiveFormsComponent implements OnInit {
 
   constructor() {
     this.signUpForm =new FormGroup({
-      userName: new FormControl(null,),
-      email: new FormControl(null,),
-      gender: new FormControl(null,)
+      userName: new FormControl('',Validators.required),
+      email: new FormControl('',[Validators.required,Validators.email]),
+      gender: new FormControl('',)
   })
    }
+
+  get signUpFormControls(){
+    return this.signUpForm.controls
+  }
 
   ngOnInit(): void {
   }

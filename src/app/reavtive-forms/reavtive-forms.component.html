@@ -6,12 +6,15 @@
                 <div class="form-group">
                     <label for="userName">User Name</label>
                     <input type="text" class="form-control" id="userName" name="userName" formControlName="userName">
+                <span class="help-block" *ngIf="!signUpFormControls.userName.valid && signUpFormControls.userName.touched" > Please Enter Valid Username </span>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
 
                     <input type="text" class="form-control" id="email" name="email" formControlName="email">
+                    <span class="help-block"  *ngIf="!signUpFormControls.email.valid && signUpFormControls.email.touched"  > Please Enter Valid Email </span>
+               
                 </div>
 
                 <div>Gender</div>
