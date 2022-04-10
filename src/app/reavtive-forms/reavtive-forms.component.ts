@@ -13,18 +13,39 @@ export class ReavtiveFormsComponent implements OnInit {
   signUpForm:FormGroup
 
   constructor() {
-    this.signUpForm =new FormGroup({
+    //Single User Form Group
+  //   this.signUpForm =new FormGroup({
+  //     userName: new FormControl('',Validators.required),
+  //     email: new FormControl('',[Validators.required,Validators.email]),
+  //     gender: new FormControl('',)
+  // })
+
+  //Using FormGroup in a Form Group
+  this.signUpForm =new FormGroup({
+
       userName: new FormControl('',Validators.required),
       email: new FormControl('',[Validators.required,Validators.email]),
-      gender: new FormControl('',)
-  })
+ 
+
+    gender: new FormControl('',)
+})
+
+
+
    }
 
   get signUpFormControls(){
     return this.signUpForm.controls
   }
 
+
   ngOnInit(): void {
+    console.log(this.signUpForm);
+    console.log(this.signUpForm.controls.userData);
+     
+    
+  
+    
   }
 
 
