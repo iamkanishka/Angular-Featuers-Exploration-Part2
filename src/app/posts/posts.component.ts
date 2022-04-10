@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-
 import { map } from 'rxjs/operators';
-
+import {Posts} from './posts.model'
 
 
 @Component({
@@ -13,7 +12,7 @@ import { map } from 'rxjs/operators';
 })
 export class PostsComponent implements OnInit {
 
-posts:any[]=[]
+posts:Posts[]=[]
   postForm:FormGroup
   constructor(private httpClient:HttpClient) { 
     this.postForm= new FormGroup({
@@ -32,7 +31,8 @@ posts:any[]=[]
 
   addPost(){
     var postdata = this.postForm.value;
-    this.httpClient.post<any>('https://ng-complete-guide-2abc1-default-rtdb.firebaseio.com/post.json',postdata).subscribe((response)=>{
+    this.httpClient.post<{[key:string]:Posts}>('https://ng-complete-guide-2abc1-default-rtdb.firebaseio.com/post.json',postdata)
+    .subscribe((response)=>{
       console.log(response)
     this.getPosts()
 
@@ -42,7 +42,8 @@ posts:any[]=[]
 
   getPosts(){
   
-    this.httpClient.get<any>('https://ng-complete-guide-2abc1-default-rtdb.firebaseio.com/post.json').pipe(map((response)=>{
+    this.httpClient.get<{[key:string]:Posts}>('https://ng-complete-guide-2abc1-default-rtdb.firebaseio.com/post.json').
+    pipe(map((response)=>{
       let posts = []
       for(let key in response){
       posts.push({...response[key],key})
