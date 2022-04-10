@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { HttpClient, HttpEventType, HttpHeaders, HttpParams } from '@angular/common/http';
+import { map, tap } from 'rxjs/operators';
 import { Posts } from '../posts/posts.model';
 
 @Injectable({
@@ -19,7 +19,8 @@ export class PostserviceService {
         headers:new HttpHeaders({
           'custom-header':'Post Request'
         }),
-        params: new HttpParams().set('custom','hai')
+        params: new HttpParams().set('custom','hai'),
+        observe: 'response'
       }
     );
   }
@@ -57,8 +58,22 @@ export class PostserviceService {
           headers:new HttpHeaders({
             'custom-header':'Delete Request'
           }),
-          params: new HttpParams().set('custom','hai')
-        })
+          params: new HttpParams().set('custom','hai'),
+          observe: 'events',
+          responseType:'text'
+        }).pipe(tap(response=>{
+          console.log(response);
+          if(response.type === HttpEventType.Sent){
+console.log('request sent');
+
+          }
+          
+          if(response.type===  HttpEventType.Response){
+           console.log(response.body);
+console.log(response.body);
+            
+          }
+        }))
       .subscribe((response) => {
         console.log(response);
       });

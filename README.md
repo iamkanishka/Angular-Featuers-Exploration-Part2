@@ -124,6 +124,7 @@ HTTP Request
 6. Error Handling in teh Http Request Calls with HTTPClinet - Angular
 7. Sending HTTP Headers in the API Request Call with HTTPClinet in The Angular
 8. Adding Query Params for the URl using HttpParams Object in HttpClient - Angular
+9. Observe different types of response in HttpClinet and Chnaging the response Body Type
 
 
 
