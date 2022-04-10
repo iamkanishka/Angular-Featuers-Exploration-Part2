@@ -12,6 +12,7 @@ import { DeactivateauthguardGuard } from './Services/guards/deactivateauthguard.
 import { UserresolversResolver } from './Services/resolvers/userresolvers.resolver';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ReavtiveFormsComponent } from './reavtive-forms/reavtive-forms.component';
+import { FilterPipesComponent } from './filter-pipes/filter-pipes.component';
 
 
 
@@ -46,6 +47,8 @@ resolve:{user:UserresolversResolver}
 
   { path: 'forms', component: TemplateDrivenFormComponent },
   { path: 'reactiveforms', component: ReavtiveFormsComponent },
+  { path: 'filterpipes', component: FilterPipesComponent },
+
 
 
 

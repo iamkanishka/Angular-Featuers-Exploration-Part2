@@ -109,6 +109,12 @@ Reactive Form
 4. Grouping the contrls in the Reactive Forms using FormGroupName
 
 
+Pipes
+1. Pipes in Angular, Chaining Multiple Pipes, parameterized Pipes in the Angular
+2.
+
+
+
 # Follow the Below Steps
 
 Note:- Before Starting with this Project, Please make sure you have installed latest stabled version of [Nodejs](https://nodejs.org/en/) Application in your System 

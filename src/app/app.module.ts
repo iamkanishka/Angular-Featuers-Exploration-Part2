@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ReavtiveFormsComponent } from './reavtive-forms/reavtive-forms.component';
+import { FilterPipesComponent } from './filter-pipes/filter-pipes.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ReavtiveFormsComponent } from './reavtive-forms/reavtive-forms.componen
     EditUserComponent,
     PageNotFoundComponent,
     TemplateDrivenFormComponent,
-    ReavtiveFormsComponent
+    ReavtiveFormsComponent,
+    FilterPipesComponent
   ],
   imports: [
     BrowserModule,
