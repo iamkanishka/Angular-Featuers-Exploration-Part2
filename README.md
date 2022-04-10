@@ -121,6 +121,8 @@ HTTP Request
 3. Define the Tyoes of HttpClient Requests data using in the interface and Generic Tyoes in the Angular
 4. Using Service for the Http request with HttpClient. Communicates Services and Componenets in Angular
 5. Implement HTTP Delete rtequest with HttpClient in Angular
+6. Error Handling in teh Http Request Calls with HTTPClinet - Angular
+7. 
 
 
 

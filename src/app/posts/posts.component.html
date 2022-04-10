@@ -24,6 +24,7 @@
             </form>
 
           <h3>Posts</h3>
+          <div *ngIf="!error" >
           <div *ngFor="let item of posts" >
               <div>
                  Title:  {{item.title}}
@@ -32,6 +33,10 @@
              Description:   {{item.description}}
             </div>
           </div>
+        </div>
+        <div  *ngIf="error" >
+<div class="alert alert-danger">{{error}}</div>
+        </div>
 
         </div>
     </div>

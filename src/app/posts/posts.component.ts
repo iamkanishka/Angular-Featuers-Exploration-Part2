@@ -14,6 +14,8 @@ import { PostserviceService } from '../Services/postservice.service';
 })
 export class PostsComponent implements OnInit {
 
+  error:any
+
 posts:Posts[]=[]
   postForm:FormGroup
   constructor(private httpClient:HttpClient, private postserviceService:PostserviceService) { 
@@ -52,6 +54,7 @@ posts:Posts[]=[]
       console.log(response)
       this.posts=response
     },(error)=>{
+      this.error=error.message
        console.log(error)
     },()=>{
       console.log('get complete');
