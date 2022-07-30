@@ -127,6 +127,7 @@ HTTP Request
 9. Observe different types of response in HttpClinet and Chnaging the response Body Type
 10. Introducing HTTP Interceptors using HTTP_INTERCEPTORS in Angular
 11. Manipulating Request Objects, headers with Interceptors in the angular
+12. Accessing Http Response Event Object with Response Interceptor in the Angular
 
 
 # Follow the Below Steps
