@@ -1,21 +1,26 @@
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
-
+import { HttpEvent, HttpEventType, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import { tap } from 'rxjs/operators'
 
 export class AuthinterceptorService implements HttpInterceptor {
-     intercept(req: HttpRequest<any>, next: HttpHandler){
-      let modofiedRequest = req.clone({
-        headers:req.headers.append('auth','abc'),
-       //You can overide/change the URL
-       // url:"asdbjsd"
+     intercept(req: HttpRequest<any>, next: HttpHandler) {
+          let modofiedRequest = req.clone({
+               headers: req.headers.append('auth', 'abc'),
+               //You can overide/change the URL
+               // url:"asdbjsd"
+               params: req.params.append('hai', 'hello world')
+          })
+          console.log('Sending Request interceptor')
+          //default request  
+          // return next.handle(req)
 
-       params:req.params.append('hai','hello world')
-      })
-      console.log('Sending Request interceptor')
-       //default request  
-      // return next.handle(req)
-
-      //modified Request
-         return next.handle(modofiedRequest)
+          //modified Request
+          return next.handle(modofiedRequest).pipe(tap(event => {
+               console.log(event);
+               if(event.type === HttpEventType.Response){
+                console.log(event.body);
+                
+               }
+          }))
 
      }
 }

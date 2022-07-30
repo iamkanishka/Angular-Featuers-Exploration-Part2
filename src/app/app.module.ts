@@ -16,7 +16,9 @@ import { FilterPipesComponent } from './filter-pipes/filter-pipes.component';
 import { ShortwordsPipe } from './Pipes/shortwords.pipe';
 import { FilterpipePipe } from './Pipes/filterpipe.pipe';
 import { PostsComponent } from './posts/posts.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthinterceptorService } from './Services/authinterceptor/authinterceptor.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +43,7 @@ ReactiveFormsModule,
 HttpClientModule
 
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass:AuthinterceptorService, multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

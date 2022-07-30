@@ -125,7 +125,8 @@ HTTP Request
 7. Sending HTTP Headers in the API Request Call with HTTPClinet in The Angular
 8. Adding Query Params for the URl using HttpParams Object in HttpClient - Angular
 9. Observe different types of response in HttpClinet and Chnaging the response Body Type
-
+10. Introducing HTTP Interceptors using HTTP_INTERCEPTORS in Angular
+11. Manipulating Request Objects, headers with Interceptors in the angular
 
 
 # Follow the Below Steps
