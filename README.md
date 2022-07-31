@@ -128,7 +128,7 @@ HTTP Request
 10. Introducing HTTP Interceptors using HTTP_INTERCEPTORS in Angular
 11. Manipulating Request Objects, headers with Interceptors in the angular
 12. Accessing Http Response Event Object with Response Interceptor in the Angular
-
+13. Adding Multiple Interceptors for the Http Request. interceptors executing order in Angular
 
 # Follow the Below Steps
 

@@ -18,6 +18,7 @@ import { FilterpipePipe } from './Pipes/filterpipe.pipe';
 import { PostsComponent } from './posts/posts.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthinterceptorService } from './Services/authinterceptor/authinterceptor.service';
+import { Logginginterceptor } from './Services/logginginterceptor/logginginterceptor.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AuthinterceptorService } from './Services/authinterceptor/authintercept
     FilterPipesComponent,
     ShortwordsPipe,
     FilterpipePipe,
-    PostsComponent
+    PostsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,11 @@ ReactiveFormsModule,
 HttpClientModule
 
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass:AuthinterceptorService, multi:true}],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass:AuthinterceptorService, multi:true},
+    {provide: HTTP_INTERCEPTORS, useClass:Logginginterceptor, multi:true}
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

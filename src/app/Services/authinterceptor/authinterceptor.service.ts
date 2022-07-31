@@ -14,13 +14,7 @@ export class AuthinterceptorService implements HttpInterceptor {
           // return next.handle(req)
 
           //modified Request
-          return next.handle(modofiedRequest).pipe(tap(event => {
-               console.log(event);
-               if(event.type === HttpEventType.Response){
-                console.log(event.body);
-                
-               }
-          }))
+          return next.handle(modofiedRequest)
 
      }
 }
