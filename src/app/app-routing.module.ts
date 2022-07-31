@@ -14,6 +14,7 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
 import { ReavtiveFormsComponent } from './reavtive-forms/reavtive-forms.component';
 import { FilterPipesComponent } from './filter-pipes/filter-pipes.component';
 import { PostsComponent } from './posts/posts.component';
+import { authComponent } from './auth/auth.component';
 
 
 
@@ -50,7 +51,10 @@ resolve:{user:UserresolversResolver}
   { path: 'reactiveforms', component: ReavtiveFormsComponent },
   { path: 'filterpipes', component: FilterPipesComponent },
   { path: 'httpposts', component: PostsComponent },
+  { path: 'auth', component: authComponent },
 
+
+  
 
 
 

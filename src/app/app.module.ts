@@ -19,6 +19,8 @@ import { PostsComponent } from './posts/posts.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthinterceptorService } from './Services/authinterceptor/authinterceptor.service';
 import { Logginginterceptor } from './Services/logginginterceptor/logginginterceptor.service';
+import { authComponent } from './auth/auth.component';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { Logginginterceptor } from './Services/logginginterceptor/logginginterce
     ShortwordsPipe,
     FilterpipePipe,
     PostsComponent,
+    authComponent
     
   ],
   imports: [
