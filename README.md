@@ -62,74 +62,75 @@ Create accessible applications with ARIA-enabled components, developer guides, a
 
 So We will be Looking These Angular-Routing  features and Learn as we go on.
 
-1. Introduction to Angular Routing Setup and Load routes with Router Module in Angular
-2. Navigating Links in the Page using  RouterLink in the angular   
-3. navigate Between Pages using router programmatically in Typescript 
-4. Passing and Fetching Parameter to Routes using ActivatedRoute snapshot in Angular
-5. Fetch Route Parameters Reactively using Params Subscrible with Activated Route in Angular
-6. Passing Query Parameters and Fragments to the URL Route with the template and Program in Angular
-7. Retrieving Query Parameters and Fragments from the URL through typescript code in Angular
-8. Setting up the Child Or Nested Roues using Childeren Key in routing module in the Angular
-9. Preserve or merge the query Parameter by forwording with querypramshandling in Angular
-10. Implement Custom 404 Page adding WildCard Route, redirect to option in the angular routing Module
-11. Separate all the Routing Configuration Code into the another file app-routing.module in the Angular
-12. Introduction to Routing Guards. Implementation of canActivate Route Guard in the angular
-13. Implementation canActictivate Route Guard for the Nested Child Routes in the Angular
-14. Controlling Naviagtion with CanDeactivate Route Guard in the angular
-15. Implementing canDeactivate Route Guard in the real-time scenario for the component
-16. Passsing Static Data to teh Route and Also Access the Static Data in the TypeScript
-17. Get Dynamic Data Before entering inti the component using the resolve Guard in the Angular
-18. How to Use Hash URLs as Fragments in the URL for the internal pages in the Angular routing
+1. Introduction to Angular Routing Setup and Load routes with Router Module in Angular.
+2. Navigating Links in the Page using  RouterLink in the angular.   
+3. navigate Between Pages using router programmatically in Typescript. 
+4. Passing and Fetching Parameter to Routes using ActivatedRoute snapshot in Angular.
+5. Fetch Route Parameters Reactively using Params Subscrible with Activated Route in Angular.
+6. Passing Query Parameters and Fragments to the URL Route with the template and Program in Angular.
+7. Retrieving Query Parameters and Fragments from the URL through typescript code in Angular.
+8. Setting up the Child Or Nested Roues using Childeren Key in routing module in the Angular.
+9. Preserve or merge the query Parameter by forwording with querypramshandling in Angular.
+10. Implement Custom 404 Page adding WildCard Route, redirect to option in the angular routing Module.
+11. Separate all the Routing Configuration Code into the another file app-routing.module in the Angular.
+12. Introduction to Routing Guards. Implementation of canActivate Route Guard in the angular.
+13. Implementation canActictivate Route Guard for the Nested Child Routes in the Angular.
+14. Controlling Naviagtion with CanDeactivate Route Guard in the angular.
+15. Implementing canDeactivate Route Guard in the real-time scenario for the component.
+16. Passsing Static Data to teh Route and Also Access the Static Data in the TypeScript.
+17. Get Dynamic Data Before entering inti the component using the resolve Guard in the Angular.
+18. How to Use Hash URLs as Fragments in the URL for the internal pages in the Angular routing.
 
 
 Continuing with Angular RXJS Observables
-1. Understand the core of the Observable in rxjs, Need to subscribe and Unsubscribe in the angular
-2. Catch Errors and Complete in rxjs custom Observable using observer.error and complete in angular
-3. Understand rxjs Operators in the observalbes before sending to the subscribe data in angular
-4. Apply multiple operators in teh rxjs Observables, know more about the operators in rxjs angular  
-5. UnderStand the subjects in th erxjs angular. Implement the Subject for cross-componenet communication
+1. Understand the core of the Observable in rxjs, Need to subscribe and Unsubscribe in the angular.
+2. Catch Errors and Complete in rxjs custom Observable using observer.error and complete in angular.
+3. Understand rxjs Operators in the observalbes before sending to the subscribe data in angular.
+4. Apply multiple operators in teh rxjs Observables, know more about the operators in rxjs angular.  
+5. UnderStand the subjects in th erxjs angular. Implement the Subject for cross-componenet communication.
 
 
 Continuing with Angular Forms(Template Driven and Reactive ) 
 
 Template Driven Form
-1. Template Driven Forms in Angular, get NgForm Object from the template to code in Angular
-2. Advantages of Using ViewChild in the Template Driven Form to get Form Object in angular
-3. Explore the Form Object in the Template driven Forms in teh Angular
-4. Validations for the Template Droven Forms. Show Validation Messages for the From in Angular
-5. Using ngModel for Two Way and one way Binding to Populate Data in template Driven Forms
-6. NgModelGroup - Grouping the From Controls in template Driven Forms using ngModelGroup in angular
-7. setValue and patch Value for Populating Form Elements in the Template Driven form in Angular
-8. Get and Reset the form Data Controlls in the template Driven Forms in the Angular
+1. Template Driven Forms in Angular, get NgForm Object from the template to code in Angular.
+2. Advantages of Using ViewChild in the Template Driven Form to get Form Object in angular.
+3. Explore the Form Object in the Template driven Forms in teh Angular.
+4. Validations for the Template Droven Forms. Show Validation Messages for the From in Angular.
+5. Using ngModel for Two Way and one way Binding to Populate Data in template Driven Forms.
+6. NgModelGroup - Grouping the From Controls in template Driven Forms using ngModelGroup in angular.
+7. setValue and patch Value for Populating Form Elements in the Template Driven form in Angular.
+8. Get and Reset the form Data Controlls in the template Driven Forms in the Angular.
 
 Reactive Form
-1. Introduction to reactive Forms Approach. Create FormGroup and FormContreol with code in Angular 
-2. Attach the HTML File using the FormGroup with FormControlName using Reactive Forms in Angular
-3. Apply Validations for Reactive Forms and Also show messages in teh HTML Template
-4. Grouping the contrls in the Reactive Forms using FormGroupName
+1. Introduction to reactive Forms Approach. Create FormGroup and FormContreol with code in Angular.
+2. Attach the HTML File using the FormGroup with FormControlName using Reactive Forms in Angular.
+3. Apply Validations for Reactive Forms and Also show messages in teh HTML Template.
+4. Grouping the contrls in the Reactive Forms using FormGroupName.
 
 
 Pipes
-1. Pipes in Angular, Chaining Multiple Pipes, parameterized Pipes in the Angular
-2. Create a Custom Pipe and pass Parameters to the Pipe in Angular using Transaform method
-3. Creating  Filter Pipe in teh Angular, Filter the list of Data with Search String in Angular
-4. Pure and Impure Pipes, Differences Betwen the pure pipe and impure pipe in the Angular
+1. Pipes in Angular, Chaining Multiple Pipes, parameterized Pipes in the Angular.
+2. Create a Custom Pipe and pass Parameters to the Pipe in Angular using Transaform method.
+3. Creating  Filter Pipe in teh Angular, Filter the list of Data with Search String in Angular.
+4. Pure and Impure Pipes, Differences Betwen the pure pipe and impure pipe in the Angular.
 
 HTTP Request
-1. Introduction to Http Requests, Make a Http Post Request Call through HttpClientModule -  Angular
-2. Make Get Requests and use RXjs Operators to transform the respiosne in the Angular 
-3. Define the Tyoes of HttpClient Requests data using in the interface and Generic Tyoes in the Angular
-4. Using Service for the Http request with HttpClient. Communicates Services and Componenets in Angular
-5. Implement HTTP Delete rtequest with HttpClient in Angular
-6. Error Handling in teh Http Request Calls with HTTPClinet - Angular
-7. Sending HTTP Headers in the API Request Call with HTTPClinet in The Angular
-8. Adding Query Params for the URl using HttpParams Object in HttpClient - Angular
-9. Observe different types of response in HttpClinet and Chnaging the response Body Type
-10. Introducing HTTP Interceptors using HTTP_INTERCEPTORS in Angular
-11. Manipulating Request Objects, headers with Interceptors in the angular
-12. Accessing Http Response Event Object with Response Interceptor in the Angular
-13. Adding Multiple Interceptors for the Http Request. interceptors executing order in Angular
-14. Authentication - Design the auth (Login) page in te angular
+1. Introduction to Http Requests, Make a Http Post Request Call through HttpClientModule -  Angular..
+2. Make Get Requests and use RXjs Operators to transform the respiosne in the Angular.
+3. Define the Tyoes of HttpClient Requests data using in the interface and Generic Tyoes in the Angular.
+4. Using Service for the Http request with HttpClient. Communicates Services and Componenets in Angular.
+5. Implement HTTP Delete rtequest with HttpClient in Angular.
+6. Error Handling in teh Http Request Calls with HTTPClinet - Angular.
+7. Sending HTTP Headers in the API Request Call with HTTPClinet in The Angular.
+8. Adding Query Params for the URl using HttpParams Object in HttpClient - Angular.
+9. Observe different types of response in HttpClinet and Chnaging the response Body Type.
+10. Introducing HTTP Interceptors using HTTP_INTERCEPTORS in Angular.
+11. Manipulating Request Objects, headers with Interceptors in the angular.
+12. Accessing Http Response Event Object with Response Interceptor in the Angular.
+13. Adding Multiple Interceptors for the Http Request. interceptors executing order in Angular.
+14. Authentication - Design the auth (Login) page in te angular.
+15. Apply reactiveForm and implememnt validation for the Authentication.
 
 # Follow the Below Steps
 

@@ -10,7 +10,7 @@ import { UserserviceService } from './Services/userservice.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnDestroy {
-  title = 'angularroutingfeatures';
+  title = 'angularFeaturesExplore';
   userAdded:boolean=false
 
   userAddedSubscription!:Subscription
