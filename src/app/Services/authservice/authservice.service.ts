@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { throwError } from 'rxjs';
 import { catchError, } from 'rxjs/operators';
 
-interface authResponse {
+export interface authResponse {
   idToken: string;
   email: string;
   refreshToken: string;
   expiresToken: string;
   localId: string;
+  registered:boolean;
 }
 
 
@@ -36,8 +37,22 @@ export class AuthserviceService {
         return throwError(errorMessage)
       }))
   }
-  login() {
+  login(email: String, password: String) {
     this.isLoggedIn = true
+    return this.http.post<authResponse>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDF8Thoia29xPyJBsFOWqGpjPpi73wbmUY', { email, password, returnSecureToken: true })
+    .pipe(catchError(errorResp => {
+      let errorMessage: string = 'An Errro Occured'
+      if (!errorResp.error || !errorResp.error.error) {
+        return throwError(errorMessage)
+
+      }
+      switch (errorResp.error.error.message) {
+        case 'EMAIL_EXISTS':
+          errorMessage = 'Email Already Exist'
+
+      }
+      return throwError(errorMessage)
+    }))
   }
 
   logout() {

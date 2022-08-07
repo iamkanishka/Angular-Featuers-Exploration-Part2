@@ -134,6 +134,7 @@ HTTP Request
 16. Authentication - Perform Signup Request and get the token and expires as Response -  Angular.
 17. Authentication - Add Loading Spinner and error Message in the Signup Request Form - Angular.
 18. Authentication -  Improve Error Messages with catchError and throwErro rxjs operators.
+19. Authentication - Send the login request and use Observable for the HTTP in the angular.
 
 
 # Follow the Below Steps

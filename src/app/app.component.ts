@@ -30,7 +30,7 @@ this.userAddedSubscription= this.userserviceService.userAddedEvent.subscribe(res
   // button functions to manage login state of user, login and logout 
 
   login(){
-    this.authserviceService.login()
+    this.authserviceService.login('','')
   }
   logout(){
     this.authserviceService.logout()
