@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { throwError } from 'rxjs';
 import { catchError, } from 'rxjs/operators';
@@ -9,7 +9,7 @@ export interface authResponse {
   refreshToken: string;
   expiresToken: string;
   localId: string;
-  registered:boolean;
+  registered: boolean;
 }
 
 
@@ -23,36 +23,40 @@ export class AuthserviceService {
   constructor(private http: HttpClient) { }
   signUp(email: String, password: String) {
     return this.http.post<authResponse>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDF8Thoia29xPyJBsFOWqGpjPpi73wbmUY', { email, password, returnSecureToken: true })
-      .pipe(catchError(errorResp => {
-        let errorMessage: string = 'An Errro Occured'
-        if (!errorResp.error || !errorResp.error.error) {
-          return throwError(errorMessage)
+      .pipe(catchError(this.getErrorhandler))
 
-        }
-        switch (errorResp.error.error.message) {
-          case 'EMAIL_EXISTS':
-            errorMessage = 'Email Already Exist'
-
-        }
-        return throwError(errorMessage)
-      }))
   }
   login(email: String, password: String) {
     this.isLoggedIn = true
     return this.http.post<authResponse>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDF8Thoia29xPyJBsFOWqGpjPpi73wbmUY', { email, password, returnSecureToken: true })
-    .pipe(catchError(errorResp => {
-      let errorMessage: string = 'An Errro Occured'
-      if (!errorResp.error || !errorResp.error.error) {
-        return throwError(errorMessage)
+      .pipe(catchError(this.getErrorhandler))
+  }
 
-      }
-      switch (errorResp.error.error.message) {
-        case 'EMAIL_EXISTS':
-          errorMessage = 'Email Already Exist'
 
-      }
+  getErrorhandler(errorResp: HttpErrorResponse) {
+    let errorMessage: string = 'An Errro Occured'
+    if (!errorResp.error || !errorResp.error.error) {
       return throwError(errorMessage)
-    }))
+
+    }
+    switch (errorResp.error.error.message) {
+      case 'EMAIL_EXISTS':
+        errorMessage = "Email Already Exist"
+        break
+      case 'EMAIL_NOT_FOUND':
+        errorMessage = "Email Doesnt Exist";
+        break
+      case 'INVALID_PASSWORD':
+        errorMessage = "Invalid Password";
+        break
+      case 'USER_DISABLED':
+        errorMessage = "User Disabled";
+        break
+      default :
+      errorMessage ='Something Went wrong';
+
+    }
+    return throwError(errorMessage)
   }
 
   logout() {
