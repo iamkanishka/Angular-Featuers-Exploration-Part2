@@ -131,6 +131,7 @@ HTTP Request
 13. Adding Multiple Interceptors for the Http Request. interceptors executing order in Angular.
 14. Authentication - Design the auth (Login) page in te angular.
 15. Apply reactiveForm and implememnt validation for the Authentication.
+16. Authentication - Perform Signup Request and get the token and expires as Response -  Angular
 
 # Follow the Below Steps
 
