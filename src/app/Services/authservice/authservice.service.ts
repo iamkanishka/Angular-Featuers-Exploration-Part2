@@ -1,7 +1,8 @@
 import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { throwError } from 'rxjs';
-import { catchError, } from 'rxjs/operators';
+import { throwError, } from 'rxjs';
+import { catchError,tap } from 'rxjs/operators';
+import { User } from 'src/app/auth/user.model';
 
 export interface authResponse {
   idToken: string;
@@ -10,6 +11,7 @@ export interface authResponse {
   expiresToken: string;
   localId: string;
   registered: boolean;
+  expiresIn:number
 }
 
 
@@ -23,15 +25,20 @@ export class AuthserviceService {
   constructor(private http: HttpClient) { }
   signUp(email: String, password: String) {
     return this.http.post<authResponse>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDF8Thoia29xPyJBsFOWqGpjPpi73wbmUY', { email, password, returnSecureToken: true })
-      .pipe(catchError(this.getErrorhandler))
+      .pipe(catchError(this.getErrorhandler),tap(this.handleUser))
 
   }
   login(email: String, password: String) {
     this.isLoggedIn = true
     return this.http.post<authResponse>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDF8Thoia29xPyJBsFOWqGpjPpi73wbmUY', { email, password, returnSecureToken: true })
-      .pipe(catchError(this.getErrorhandler))
+      .pipe(catchError(this.getErrorhandler),tap(this.handleUser))
   }
 
+
+  private handleUser(authResponse:authResponse){
+    const expireDate = new Date(new Date().getTime()+ authResponse.expiresIn * 1000)
+    const user = new User(authResponse.email, authResponse.localId, authResponse.idToken,expireDate)
+  }
 
   getErrorhandler(errorResp: HttpErrorResponse) {
     let errorMessage: string = 'An Errro Occured'

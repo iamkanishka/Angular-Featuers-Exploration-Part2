@@ -21,6 +21,7 @@ import { AuthinterceptorService } from './Services/authinterceptor/authintercept
 import { Logginginterceptor } from './Services/logginginterceptor/logginginterceptor.service';
 import { authComponent } from './auth/auth.component';
 import { LoadingSpinnerComponent } from './Shared/loading-spinner/loading-spinner.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { LoadingSpinnerComponent } from './Shared/loading-spinner/loading-spinne
     FilterpipePipe,
     PostsComponent,
     authComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    NavigationComponent
     
   ],
   imports: [

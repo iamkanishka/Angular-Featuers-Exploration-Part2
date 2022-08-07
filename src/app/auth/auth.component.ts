@@ -1,6 +1,7 @@
 import { ThrowStmt } from "@angular/compiler";
 import { Component } from "@angular/core";
 import { FormControl, FormGroup, NgForm, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 import { Observable } from "rxjs";
 import { authResponse, AuthserviceService } from "../Services/authservice/authservice.service";
 
@@ -13,7 +14,7 @@ export class authComponent {
     isLoading: Boolean = false
     authForm: FormGroup
     error: string = ''
-    constructor(private authService: AuthserviceService) {
+    constructor(private authService: AuthserviceService, private router:Router) {
         this.authForm = new FormGroup({
             email: new FormControl(null, [Validators.required, Validators.email]),
             password: new FormControl(null, [Validators.required, Validators.minLength(6)])
@@ -42,6 +43,8 @@ export class authComponent {
         authObser.subscribe((res) => {
             this.isLoading = false
             console.log(res);
+
+            this.router.navigate(['/'])
 
         }, (errorMessage) => {
             console.log(errorMessage);
