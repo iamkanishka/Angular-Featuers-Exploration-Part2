@@ -133,7 +133,7 @@ HTTP Request
 15. Apply reactiveForm and implememnt validation for the Authentication.
 16. Authentication - Perform Signup Request and get the token and expires as Response -  Angular.
 17. Authentication - Add Loading Spinner and error Message in the Signup Request Form - Angular.
-18. Authentication -  Improve Error Messages with catchError and throwErro rxjs operators 
+18. Authentication -  Improve Error Messages with catchError and throwErro rxjs operators.
 
 
 # Follow the Below Steps
