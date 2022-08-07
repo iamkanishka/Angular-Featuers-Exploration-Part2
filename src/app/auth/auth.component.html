@@ -1,7 +1,11 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <form [formGroup]="authForm">
+        <div class="col-md-12 ">
+            <div class="alert alert-danger my-6" *ngIf="this.error!=''">{{this.error}}</div>
+            <div *ngIf="isLoading" class="text-center">
+                <app-loading-spinner></app-loading-spinner>
+            </div>
+            <form [formGroup]="authForm" *ngIf="!isLoading">
               <div class="form-group">
                   <label for="email">Email</label>
                   <input type="text"   formControlName="email" class="form-control"  />
@@ -22,6 +26,7 @@
             <div class="mt-4">
                 <button type="submit" class="btn btn-primary" [disabled]="authForm.invalid" (click)="onFormSubmit()">{{isLoginMode ? 'Login' : 'Signup'   }}</button> | 
                 <button  type="submit" class="btn btn-primary" (click)="onSwitchMode()">Switch to {{isLoginMode ? 'Signup' : 'Login' }} </button>
+            
              </div>
             </form>
         </div>

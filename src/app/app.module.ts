@@ -20,6 +20,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthinterceptorService } from './Services/authinterceptor/authinterceptor.service';
 import { Logginginterceptor } from './Services/logginginterceptor/logginginterceptor.service';
 import { authComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './Shared/loading-spinner/loading-spinner.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { authComponent } from './auth/auth.component';
     ShortwordsPipe,
     FilterpipePipe,
     PostsComponent,
-    authComponent
+    authComponent,
+    LoadingSpinnerComponent
     
   ],
   imports: [

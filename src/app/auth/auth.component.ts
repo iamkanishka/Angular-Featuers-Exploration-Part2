@@ -9,7 +9,9 @@ import { AuthserviceService } from "../Services/authservice/authservice.service"
 })
 export class authComponent {
     isLoginMode: Boolean = true
+    isLoading:Boolean =false
     authForm: FormGroup
+    error:string=''
     constructor(private authService: AuthserviceService) {
         this.authForm = new FormGroup({
             email: new FormControl(null, [Validators.required, Validators.email]),
@@ -22,15 +24,23 @@ export class authComponent {
         this.isLoginMode = !this.isLoginMode
     }
     onFormSubmit() {
+
         if (this.authForm.invalid) {
             return
         }
+        this.isLoading=true
+
         this.authService.signUp(this.authForm.value.email, this.authForm.value.password).subscribe((res) => {
+            this.isLoading=false
             console.log(res);
 
         }, (error) => {
             console.log(error);
-
+            this.isLoading=false
+            this.error=error.error.error.message
+            console.log(this.error);
+            
+           
         })
 
     }
