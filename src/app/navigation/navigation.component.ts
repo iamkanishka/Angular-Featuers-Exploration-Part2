@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthserviceService } from '../Services/authservice/authservice.service';
 
 @Component({
   selector: 'app-navigation',
@@ -6,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
+  isAuthenticated:boolean=false
 
-  constructor() { }
+
+  constructor(private authServive:AuthserviceService) {
+    this.authServive.userSub.subscribe((user)=>{
+      console.log(user);
+      this.isAuthenticated = user ? true :false
+      })
+   }
 
   ngOnInit(): void {
   }

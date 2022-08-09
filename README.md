@@ -137,6 +137,7 @@ HTTP Request
 19. Authentication - Send the login request and use Observable for the HTTP in the angular.
 20. Authetication - Improve Error handling for the Login Form in the Angular
 21. Authentication - Create and Store the User Token Data in the angular
+22. Authentication - Update the UI with Auth Token Data using the Subject in the Angular
 
 
 # Follow the Below Steps
