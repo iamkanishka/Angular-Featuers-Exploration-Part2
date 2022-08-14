@@ -1,8 +1,9 @@
 import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject, throwError, } from 'rxjs';
+import { BehaviorSubject, Subject, throwError, } from 'rxjs';
 import { catchError,tap } from 'rxjs/operators';
 import { User } from 'src/app/auth/user.model';
+
 
 export interface authResponse {
   idToken: string;
@@ -21,7 +22,7 @@ export interface authResponse {
 export class AuthserviceService {
 
   isLoggedIn = false
-  userSub = new Subject<User>();
+  userSub = new BehaviorSubject<User>(null!);
 
   constructor(private http: HttpClient) { }
   signUp(email: String, password: String) {

@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEventType, HttpHeaders, HttpParams } from '@angular/common/http';
-import { map, tap } from 'rxjs/operators';
+import { map, tap,take, switchMap } from 'rxjs/operators';
 import { Posts } from '../posts/posts.model';
+import { AuthserviceService } from './authservice/authservice.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PostserviceService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,private authServive:AuthserviceService) {
+ 
+   }
+
 
   addPost(postdata: { [key: string]: Posts }) {
     return this.httpClient.post<{ [key: string]: Posts }>(
@@ -24,29 +28,42 @@ export class PostserviceService {
   }
 
   getPosts() {
-    let searchParams = new HttpParams();
-    searchParams = searchParams.append('custom', 'hai')
-    searchParams = searchParams.append('name', 'kamishka')
-
-
-    return this.httpClient
+     // let searchParams = new HttpParams();
+    // searchParams = searchParams.append('custom', 'hai')
+    // searchParams = searchParams.append('name', 'kamishka')
+  return   this.authServive.userSub.pipe(take(1), switchMap(user=>{
+      let searchParams = new HttpParams();
+      searchParams = searchParams.append('auth', user._token)
+      return this.httpClient
       .get<{ [key: string]: Posts }>(
         'https://ng-complete-guide-2abc1-default-rtdb.firebaseio.com/post.json', {
-        headers: new HttpHeaders({
-          'custom-header': 'Get Request'
-        }),
-        params: new HttpParams().set('custom', 'hai')
+    
+        params: searchParams
       }
       )
-      .pipe(
-        map((response) => {
+    }),
+    map((response) => {
           let posts = [];
           for (let key in response) {
             posts.push({ ...response[key], id: key });
           }
           return posts;
         })
-      );
+    
+    )
+   
+
+
+  
+      // .pipe(
+      //   map((response) => {
+      //     let posts = [];
+      //     for (let key in response) {
+      //       posts.push({ ...response[key], id: key });
+      //     }
+      //     return posts;
+      //   })
+      // );
   }
 
   clearPosts() {
