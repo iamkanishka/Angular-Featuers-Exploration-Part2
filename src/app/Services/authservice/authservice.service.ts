@@ -1,5 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject, Subject, throwError, } from 'rxjs';
 import { catchError,tap } from 'rxjs/operators';
 import { User } from 'src/app/auth/user.model';
@@ -23,8 +24,9 @@ export class AuthserviceService {
 
   isLoggedIn = false
   userSub = new BehaviorSubject<User>(null!);
+  clearTimeout:any
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router:Router) { }
   signUp(email: String, password: String) {
     return this.http.post<authResponse>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDF8Thoia29xPyJBsFOWqGpjPpi73wbmUY', { email, password, returnSecureToken: true })
       .pipe(catchError(this.getErrorhandler),tap(this.handleUser.bind(this)))
@@ -42,6 +44,7 @@ export class AuthserviceService {
     const user = new User(authResponse.email, authResponse.localId, authResponse.idToken,expireDate)
     this.userSub.next(user)
     localStorage.setItem('userData', JSON.stringify(user))
+    this.autoLogout( authResponse.expiresIn * 1000)
   }
 
   getErrorhandler(errorResp: HttpErrorResponse) {
@@ -79,11 +82,27 @@ export class AuthserviceService {
     if(user._token){
       this.userSub.next(user)
     }
+
+    let date = new Date().getTime()
+    let expirationDate=  new Date(userDataParsed.expirationDate).getTime();
+    this.autoLogout(expirationDate-date)
+   
+  }
+
+  autoLogout(expirationDate:number){
+ this.clearTimeout= setTimeout(()=>{
+     this.logout()
+  },expirationDate)
    
   }
 
   logout() {
     this.userSub.next(null!)
+    this.router.navigateByUrl('/auth')
+    localStorage.removeItem('userData')
+   if(this.clearTimeout){
+    clearTimeout(this.clearTimeout)
+   }
 
   }
   isAuthenticated() {

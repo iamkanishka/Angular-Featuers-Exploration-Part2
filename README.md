@@ -141,7 +141,10 @@ HTTP Request
 22. Authentication - Send Auth Token to the outgoing HTTP Requests with behavior Subject - Angular.
 23. Authentication - Add the Auth Token as paramerter using interceptors - Angular
 24. Authentication - Adding the Logout functionality by removing the authtoken in angular.
-25. Authentication - Saving Token in LocalStorage for the autologin feature - Angular
+25. Authentication - Saving Token in LocalStorage for the autologin feature - Angular.
+26. Authentication - Auto Logout the user when the token expired - Angular.
+27. 
+
 
 
 # Follow the Below Steps
