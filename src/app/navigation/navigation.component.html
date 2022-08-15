@@ -1,6 +1,6 @@
 <ul class="nav flex-column nav-pills" >
   <li class="nav-item"> <a class="nav-link" routerLinkActive="active" *ngIf="!isAuthenticated" [routerLink]="['/auth']">Authenticate</a></li>
-  <li class="nav-item"> <a class="nav-link" routerLinkActive="active" *ngIf="isAuthenticated" [routerLink]="['/auth']">Logout</a></li>
+  <li class="nav-item"> <a class="nav-link" routerLinkActive="active" href="#" (click)="Logout($event)" *ngIf="isAuthenticated" [routerLink]="['/auth']">Logout</a></li>
  <div *ngIf="isAuthenticated">
   <li class="nav-item"> <a class="nav-link" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" [routerLink]="['']">home</a></li>
   <li class="nav-item"> <a class="nav-link" routerLinkActive="active" [routerLink]="['/users']">Users</a></li>
@@ -10,7 +10,4 @@
   <li class="nav-item"> <a class="nav-link" routerLinkActive="active" [routerLink]="['/filterpipes']">FilterPipes</a>
   <li class="nav-item"> <a class="nav-link" routerLinkActive="active" [routerLink]="['/httpposts']">HTTP - Posts</a>  </li>
   </div>
-
-
-
 </ul>

@@ -7,17 +7,23 @@ import { AuthserviceService } from '../Services/authservice/authservice.service'
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-  isAuthenticated:boolean=false
+  isAuthenticated: boolean = false
 
 
-  constructor(private authServive:AuthserviceService) {
-    this.authServive.userSub.subscribe((user)=>{
+  constructor(private authServive: AuthserviceService) {
+    this.authServive.userSub.subscribe((user) => {
       console.log(user);
-      this.isAuthenticated = user ? true :false
-      })
-   }
+      this.isAuthenticated = user ? true : false
+    })
+  }
 
   ngOnInit(): void {
+  }
+
+  Logout(event:any){
+event.preventDefault();
+    this.authServive.logout()
+
   }
 
 }

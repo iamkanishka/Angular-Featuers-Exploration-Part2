@@ -70,7 +70,7 @@ export class AuthserviceService {
   }
 
   logout() {
-    this.isLoggedIn = false
+    this.userSub.next(null!)
 
   }
   isAuthenticated() {

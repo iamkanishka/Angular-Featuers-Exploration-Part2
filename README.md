@@ -140,7 +140,8 @@ HTTP Request
 22. Authentication - Update the UI with Auth Token Data using the Subject in the Angular.
 22. Authentication - Send Auth Token to the outgoing HTTP Requests with behavior Subject - Angular.
 23. Authentication - Add the Auth Token as paramerter using interceptors - Angular
-24. 
+24. Authentication - Adding the Logout functionality by removing the authtoken in angular.
+25. 
 
 
 # Follow the Below Steps
