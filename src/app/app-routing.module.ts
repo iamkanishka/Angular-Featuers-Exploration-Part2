@@ -15,6 +15,8 @@ import { ReavtiveFormsComponent } from './reavtive-forms/reavtive-forms.componen
 import { FilterPipesComponent } from './filter-pipes/filter-pipes.component';
 import { PostsComponent } from './posts/posts.component';
 import { authComponent } from './auth/auth.component';
+import { AuthTokenGuard } from './Services/guards/auth-token.guard';
+
 
 
 
@@ -50,7 +52,7 @@ resolve:{user:UserresolversResolver}
   { path: 'forms', component: TemplateDrivenFormComponent },
   { path: 'reactiveforms', component: ReavtiveFormsComponent },
   { path: 'filterpipes', component: FilterPipesComponent },
-  { path: 'httpposts', component: PostsComponent },
+  { path: 'httpposts', component: PostsComponent, canActivate:[AuthTokenGuard] },
   { path: 'auth', component: authComponent },
 
 
