@@ -1,8 +1,8 @@
 import { ThrowStmt } from "@angular/compiler";
-import { Component, ComponentFactoryResolver, ViewChild } from "@angular/core";
+import { Component, ComponentFactoryResolver, OnDestroy, ViewChild } from "@angular/core";
 import { FormControl, FormGroup, NgForm, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { Observable } from "rxjs";
+import { Observable, Subscription } from "rxjs";
 import { authResponse, AuthserviceService } from "../Services/authservice/authservice.service";
 import { AlertModalComponent } from "../Shared/alert-modal/alert-modal.component";
 import { PlaceholderDirective } from "../Shared/placeholder/placeholder.directive";
@@ -11,11 +11,12 @@ import { PlaceholderDirective } from "../Shared/placeholder/placeholder.directiv
     selector: 'app-auth',
     templateUrl: './auth.component.html'
 })
-export class authComponent {
+export class authComponent implements OnDestroy {
     isLoginMode: Boolean = true
     isLoading: Boolean = false
     authForm: FormGroup
     error: string = ''
+    closeSubscription! :Subscription
 
     @ViewChild(PlaceholderDirective) alertHost! :PlaceholderDirective
     constructor(private authService: AuthserviceService, private router: Router, private componentFactoryResolver: ComponentFactoryResolver) {
@@ -67,7 +68,21 @@ export class authComponent {
     showErrorMwssage(message: string) {
         const componentFactory = this.componentFactoryResolver.resolveComponentFactory(AlertModalComponent)
          this.alertHost.viewContainerRef.clear()
-         this.alertHost.viewContainerRef.createComponent(componentFactory)
+        const compoemnentRef = this.alertHost.viewContainerRef.createComponent(componentFactory)
+         compoemnentRef.instance.error = message
+        this.closeSubscription = compoemnentRef.instance.onClose.subscribe(()=>{
+          this.closeSubscription.unsubscribe();
+         this.alertHost.viewContainerRef.clear()
+
+         })
+    }
+
+    ngOnDestroy(): void {
+        if(this.closeSubscription){
+            this.closeSubscription.unsubscribe();
+
+        }
+        
     }
 
     get authFormControls() {
