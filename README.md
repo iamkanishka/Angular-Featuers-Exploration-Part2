@@ -150,7 +150,7 @@ Extra Features
 2. Create Component Dynamically usinh ComponentFactory resolver and ViewContainerRef in Angular
 3. Create Component using ViewContainerRef and Deprecation of entry components from angular 9
 4. Access the component Properties and methods with ComponentRef instance in Angular
-5. 
+5. What are Modules. Module Introduction. Analyzing the AppModule in Angular.
 
 
 
