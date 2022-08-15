@@ -24,6 +24,8 @@ import { LoadingSpinnerComponent } from './Shared/loading-spinner/loading-spinne
 import { NavigationComponent } from './navigation/navigation.component';
 import { AuthTokenInterceptorService } from './Services/auth-token-interceptor/auth-token-interceptor.service';
 import { AlertModalComponent } from './Shared/alert-modal/alert-modal.component';
+import { PlaceholderDirective } from './Shared/placeholder/placeholder.directive';
+
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { AlertModalComponent } from './Shared/alert-modal/alert-modal.component'
     authComponent,
     LoadingSpinnerComponent,
     NavigationComponent,
-    AlertModalComponent
+    AlertModalComponent,
+    PlaceholderDirective,
+ 
     
   ],
   imports: [
