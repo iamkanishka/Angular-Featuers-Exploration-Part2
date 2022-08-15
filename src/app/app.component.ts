@@ -22,9 +22,12 @@ export class AppComponent implements OnDestroy {
     // })
 
    //Getting Data from the Subjects with subscription - 
-this.userAddedSubscription= this.userserviceService.userAddedEvent.subscribe(res=>{
-    this.userAdded=res
-  })
+// this.userAddedSubscription= this.userserviceService.userAddedEvent.subscribe(res=>{
+//     this.userAdded=res
+//   })
+
+
+this.authserviceService.autoLogin()
 
   }
   // button functions to manage login state of user, login and logout 

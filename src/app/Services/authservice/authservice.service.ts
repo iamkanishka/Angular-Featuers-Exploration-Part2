@@ -41,6 +41,7 @@ export class AuthserviceService {
     const expireDate = new Date(new Date().getTime()+ authResponse.expiresIn * 1000)
     const user = new User(authResponse.email, authResponse.localId, authResponse.idToken,expireDate)
     this.userSub.next(user)
+    localStorage.setItem('userData', JSON.stringify(user))
   }
 
   getErrorhandler(errorResp: HttpErrorResponse) {
@@ -67,6 +68,18 @@ export class AuthserviceService {
 
     }
     return throwError(errorMessage)
+  }
+
+  autoLogin(){
+    let userData:string = localStorage.getItem('userData')!
+    let userDataParsed:{ email: string,  localId: string,  _token: string,  expirationDate: Date} = JSON.parse(userData);
+    if(!userDataParsed){ return;}
+
+    let user = new User(userDataParsed.email, userDataParsed._token,userDataParsed.localId,new Date(userDataParsed.expirationDate));
+    if(user._token){
+      this.userSub.next(user)
+    }
+   
   }
 
   logout() {
