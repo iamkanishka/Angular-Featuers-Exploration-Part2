@@ -1,7 +1,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 ">
-            <div class="alert alert-danger my-6" *ngIf="this.error!=''">{{this.error}}</div>
+            <!-- <div class="alert alert-danger my-6" *ngIf="this.error!=''">{{this.error}}</div> -->
+            <app-alert-modal [error]="error" *ngIf="this.error!=''" (onClose)="error=''" ></app-alert-modal>
             <div *ngIf="isLoading" class="text-center">
                 <app-loading-spinner></app-loading-spinner>
             </div>

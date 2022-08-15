@@ -23,6 +23,7 @@ import { authComponent } from './auth/auth.component';
 import { LoadingSpinnerComponent } from './Shared/loading-spinner/loading-spinner.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { AuthTokenInterceptorService } from './Services/auth-token-interceptor/auth-token-interceptor.service';
+import { AlertModalComponent } from './Shared/alert-modal/alert-modal.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { AuthTokenInterceptorService } from './Services/auth-token-interceptor/a
     PostsComponent,
     authComponent,
     LoadingSpinnerComponent,
-    NavigationComponent
+    NavigationComponent,
+    AlertModalComponent
     
   ],
   imports: [

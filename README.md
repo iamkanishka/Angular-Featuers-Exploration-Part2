@@ -144,7 +144,9 @@ HTTP Request
 25. Authentication - Saving Token in LocalStorage for the autologin feature - Angular.
 26. Authentication - Auto Logout the user when the token expired - Angular.
 27. Authentication - Proetcting the routes with canActivate Guard using UrlTree
-28. 
+
+Extra Features
+1. Create Alert Modal Components to show the Errors om the Angular
 
 
 
