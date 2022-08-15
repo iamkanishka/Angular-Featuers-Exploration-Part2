@@ -28,6 +28,26 @@ export class PostserviceService {
   }
 
   getPosts() {
+    return this.httpClient
+      .get<{ [key: string]: Posts }>(
+        'https://ng-complete-guide-2abc1-default-rtdb.firebaseio.com/post.json', {
+       
+      }
+      ) 
+      .pipe(
+          map((response) => {
+            let posts = [];
+            for (let key in response) {
+              posts.push({ ...response[key], id: key });
+            }
+            return posts;
+          })
+        );
+
+
+
+
+
      // let searchParams = new HttpParams();
     // searchParams = searchParams.append('custom', 'hai')
     // searchParams = searchParams.append('name', 'kamishka')

@@ -139,6 +139,8 @@ HTTP Request
 21. Authentication - Create and Store the User Token Data in the angular.
 22. Authentication - Update the UI with Auth Token Data using the Subject in the Angular.
 22. Authentication - Send Auth Token to the outgoing HTTP Requests with behavior Subject - Angular.
+23. Authentication - Add the Auth Token as paramerter using interceptors - Angular
+24. 
 
 
 # Follow the Below Steps
