@@ -5,6 +5,8 @@ import { Directive, ViewContainerRef } from '@angular/core';
 })
 export class PlaceholderDirective {
 
-  constructor(private View :ViewContainerRef) { }
+  constructor(public viewContainerRef :ViewContainerRef) { 
+
+  }
 
 }

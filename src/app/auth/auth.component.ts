@@ -1,10 +1,11 @@
 import { ThrowStmt } from "@angular/compiler";
-import { Component, ComponentFactoryResolver } from "@angular/core";
+import { Component, ComponentFactoryResolver, ViewChild } from "@angular/core";
 import { FormControl, FormGroup, NgForm, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { Observable } from "rxjs";
 import { authResponse, AuthserviceService } from "../Services/authservice/authservice.service";
 import { AlertModalComponent } from "../Shared/alert-modal/alert-modal.component";
+import { PlaceholderDirective } from "../Shared/placeholder/placeholder.directive";
 
 @Component({
     selector: 'app-auth',
@@ -15,6 +16,8 @@ export class authComponent {
     isLoading: Boolean = false
     authForm: FormGroup
     error: string = ''
+
+    @ViewChild(PlaceholderDirective) alertHost! :PlaceholderDirective
     constructor(private authService: AuthserviceService, private router: Router, private componentFactoryResolver: ComponentFactoryResolver) {
 
         this.authForm = new FormGroup({
@@ -63,7 +66,8 @@ export class authComponent {
 
     showErrorMwssage(message: string) {
         const componentFactory = this.componentFactoryResolver.resolveComponentFactory(AlertModalComponent)
-        
+         this.alertHost.viewContainerRef.clear()
+         this.alertHost.viewContainerRef.createComponent(componentFactory)
     }
 
     get authFormControls() {

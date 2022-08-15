@@ -148,7 +148,7 @@ HTTP Request
 Extra Features
 1. Create Alert Modal Components to show the Errors om the Angular
 2. Create Component Dynamically usinh ComponentFactory resolver and ViewContainerRef in Angular
-3. 
+3. Create Component using ViewContainerRef and Deprecation of entry components from angular 9
 
 
 
