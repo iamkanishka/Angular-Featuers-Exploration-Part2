@@ -1,21 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UsersComponent } from './users/users.component';
+
 import { CategoriesComponent } from './categories/categories.component';
 import { HomeComponent } from './home/home.component';
-import { UserComponent } from './user/user.component';
-import { EditUserComponent } from './edit-user/edit-user.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { AuthguardGuard } from './Services/guards/authguard.guard';
-import { DeactivateauthguardGuard } from './Services/guards/deactivateauthguard.guard';
 
-import { UserresolversResolver } from './Services/resolvers/userresolvers.resolver';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ReavtiveFormsComponent } from './reavtive-forms/reavtive-forms.component';
 import { FilterPipesComponent } from './filter-pipes/filter-pipes.component';
-import { PostsComponent } from './posts/posts.component';
-import { authComponent } from './auth/auth.component';
-import { AuthTokenGuard } from './Services/guards/auth-token.guard';
+
 
 
 
@@ -29,31 +23,31 @@ const routes: Routes = [
   // { path: 'users', component: UsersComponent },
   // { path: 'user/:id/:name', component: UserComponent },
   
-//Making Above Routes to Nested Routes 
-  { path: 'users', component: UsersComponent,
- //Note: - canActivate:[AuthguardGuard] will guard Parent-Chilren Components 
-  canActivate:[AuthTokenGuard],
+// //Making Above Routes to Nested Routes 
+//   { path: 'users', component: UsersComponent,
+//  //Note: - canActivate:[AuthguardGuard] will guard Parent-Chilren Components 
+//   canActivate:[AuthTokenGuard],
   
-  //Note: - canActivateChild:[AuthguardGuard] will guard Parent's Chilrens Components 
-  //canActivateChild:[AuthguardGuard], 
-  children:[
-    { path: 'user/:id/:name', component: UserComponent },
+//   //Note: - canActivateChild:[AuthguardGuard] will guard Parent's Chilrens Components 
+//   //canActivateChild:[AuthguardGuard], 
+//   children:[
+//     { path: 'user/:id/:name', component: UserComponent },
     
-    //Note: - canDeactivate Works when theres a redirection from compoemnent A to  componenet B,
-    // canDeactivate gets triggered in the Component A when thers a redirection 
+//     //Note: - canDeactivate Works when theres a redirection from compoemnent A to  componenet B,
+//     // canDeactivate gets triggered in the Component A when thers a redirection 
 
-    //Note: Using resolver is used to send the data to the components to before loading the respective componenet
-  { path: 'user/:id/:name/edit', component: EditUserComponent,canDeactivate: [DeactivateauthguardGuard] ,
-resolve:{user:UserresolversResolver}
-}
+//     //Note: Using resolver is used to send the data to the components to before loading the respective componenet
+//   { path: 'user/:id/:name/edit', component: EditUserComponent,canDeactivate: [DeactivateauthguardGuard] ,
+// resolve:{user:UserresolversResolver}
+// }
   
-  ] },
+//   ] },
 
   { path: 'forms', component: TemplateDrivenFormComponent },
   { path: 'reactiveforms', component: ReavtiveFormsComponent },
   { path: 'filterpipes', component: FilterPipesComponent },
-  { path: 'httpposts', component: PostsComponent, canActivate:[AuthTokenGuard] },
-  { path: 'auth', component: authComponent },
+ // { path: 'httpposts', component: PostsComponent, canActivate:[AuthTokenGuard] },
+ // { path: 'auth', component: authComponent },
 
 
   

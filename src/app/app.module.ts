@@ -14,17 +14,19 @@ import { ReavtiveFormsComponent } from './reavtive-forms/reavtive-forms.componen
 import { FilterPipesComponent } from './filter-pipes/filter-pipes.component';
 import { ShortwordsPipe } from './Pipes/shortwords.pipe';
 import { FilterpipePipe } from './Pipes/filterpipe.pipe';
-import { PostsComponent } from './posts/posts.component';
+
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthinterceptorService } from './Services/authinterceptor/authinterceptor.service';
 import { Logginginterceptor } from './Services/logginginterceptor/logginginterceptor.service';
-import { authComponent } from './auth/auth.component';
-import { LoadingSpinnerComponent } from './Shared/loading-spinner/loading-spinner.component';
+//import { LoadingSpinnerComponent } from './Shared/loading-spinner/loading-spinner.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { AuthTokenInterceptorService } from './Services/auth-token-interceptor/auth-token-interceptor.service';
 import { AlertModalComponent } from './Shared/alert-modal/alert-modal.component';
 import { PlaceholderDirective } from './Shared/placeholder/placeholder.directive';
 import { UsermoduleModule } from './usermodule/usermodule.module';
+import { PostModule } from './postmodule/post.module';
+import { AuthModule } from './authmodule/auth.module';
+
 
 
 
@@ -39,9 +41,7 @@ import { UsermoduleModule } from './usermodule/usermodule.module';
     FilterPipesComponent,
     ShortwordsPipe,
     FilterpipePipe,
-    PostsComponent,
-    authComponent,
-    LoadingSpinnerComponent,
+   //  LoadingSpinnerComponent,
     NavigationComponent,
     AlertModalComponent,
     PlaceholderDirective,
@@ -50,11 +50,13 @@ import { UsermoduleModule } from './usermodule/usermodule.module';
   ],
   imports: [
     BrowserModule,
+    UsermoduleModule,
+    PostModule,
+    AuthModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    UsermoduleModule,
     
 
   ],
@@ -65,6 +67,7 @@ import { UsermoduleModule } from './usermodule/usermodule.module';
 
 
   ],
+  exports:[],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
