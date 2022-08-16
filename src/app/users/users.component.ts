@@ -10,6 +10,8 @@ import { UserserviceService } from '../Services/userservice.service';
 })
 export class UsersComponent implements OnInit {
 
+  usersData = ['Rama', 'Krishna', 'Leela']
+
   constructor(private router:Router,private userserviceService:UserserviceService) {
 
   }

@@ -28,8 +28,9 @@
 
 
 <p>Setting up the child or Nested Routes using children key</p>
-<ul class="nav flex-column">
-<li class="nav-item">
+<!-- Multiplicative of li statments -->
+<!-- <ul class="nav flex-column">
+<li class="nav-item" >
     <a class="nav-link"  [routerLink]="['/users/user',1,'Rama']" [queryParams]="{page:1,search:'Rama'}" >Get Rama Details</a>
 </li>
 <li class="nav-item">
@@ -37,6 +38,13 @@
 </li>
 <li class="nav-item">
     <a class="nav-link"  [routerLink]="['/users/user',3,'Vishnu']" [queryParams]="{page:1,search:'Vishnu'}" >Get Vishnu Details</a>
+</li>
+</ul> -->
+
+<!-- Showcasing of commonmodule in users module to run basic commnads like ngFor and ngIf -->
+<ul class="nav flex-column">
+<li class="nav-item" *ngFor="let user of usersData" >
+    <a class="nav-link"  [routerLink]="['/users/user',1,user]" [queryParams]="{page:1,search:user}" >Get {{user}} Details</a>
 </li>
 </ul>
 
