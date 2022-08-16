@@ -19,13 +19,13 @@ import { UsersroutingmoduleModule } from './usersroutingmodule.module';
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule
-  ],
-  exports:[
-    UserComponent,
-    EditUserComponent,
-    UsersComponent,
     UsersroutingmoduleModule
-  ]
+
+  ],
+  // exports:[
+  //   UserComponent,
+  //   EditUserComponent,
+  //   UsersComponent,
+  // ]
 })
 export class UsermoduleModule { }
