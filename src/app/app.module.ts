@@ -3,11 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UsersComponent } from './users/users.component';
+
 import { CategoriesComponent } from './categories/categories.component';
 import { HomeComponent } from './home/home.component';
-import { UserComponent } from './user/user.component';
-import { EditUserComponent } from './edit-user/edit-user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
@@ -25,17 +23,15 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { AuthTokenInterceptorService } from './Services/auth-token-interceptor/auth-token-interceptor.service';
 import { AlertModalComponent } from './Shared/alert-modal/alert-modal.component';
 import { PlaceholderDirective } from './Shared/placeholder/placeholder.directive';
+import { UsermoduleModule } from './usermodule/usermodule.module';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsersComponent,
     CategoriesComponent,
     HomeComponent,
-    UserComponent,
-    EditUserComponent,
     PageNotFoundComponent,
     TemplateDrivenFormComponent,
     ReavtiveFormsComponent,
@@ -48,21 +44,22 @@ import { PlaceholderDirective } from './Shared/placeholder/placeholder.directive
     NavigationComponent,
     AlertModalComponent,
     PlaceholderDirective,
- 
-    
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-ReactiveFormsModule,
-HttpClientModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    UsermoduleModule
 
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass:AuthinterceptorService, multi:true},
-    {provide: HTTP_INTERCEPTORS, useClass:Logginginterceptor, multi:true},
-    {provide: HTTP_INTERCEPTORS, useClass:AuthTokenInterceptorService, multi:true}
+    { provide: HTTP_INTERCEPTORS, useClass: AuthinterceptorService, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: Logginginterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptorService, multi: true }
 
 
   ],

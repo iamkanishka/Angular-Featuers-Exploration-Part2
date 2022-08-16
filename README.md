@@ -151,6 +151,7 @@ Extra Features
 3. Create Component using ViewContainerRef and Deprecation of entry components from angular 9
 4. Access the component Properties and methods with ComponentRef instance in Angular
 5. What are Modules. Module Introduction. Analyzing the AppModule in Angular.
+6. Creating the Feature Module by Splitting the components in the angular.
 
 
 
