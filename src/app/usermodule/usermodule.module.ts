@@ -5,6 +5,7 @@ import { UserComponent } from '../user/user.component';
 import { EditUserComponent } from '../edit-user/edit-user.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { UsersroutingmoduleModule } from './usersroutingmodule.module';
 
 
 
@@ -23,7 +24,8 @@ import { RouterModule } from '@angular/router';
   exports:[
     UserComponent,
     EditUserComponent,
-    UsersComponent
+    UsersComponent,
+    UsersroutingmoduleModule
   ]
 })
 export class UsermoduleModule { }
