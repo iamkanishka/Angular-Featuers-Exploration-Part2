@@ -14,7 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild([
-      { path: 'httpposts', component: PostsComponent, canActivate: [AuthTokenGuard] },
+      { path: '', component: PostsComponent, canActivate: [AuthTokenGuard] },
 
     ])
   ]

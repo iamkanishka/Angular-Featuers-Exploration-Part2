@@ -41,6 +41,14 @@ const routes: Routes = [
   
 //   ] },
 
+
+
+//Implementing Lazy-Loading for users and post module
+{path:'users', loadChildren:()=>import('./usermodule/usermodule.module').then(m=>m.UsermoduleModule)},
+{path:'httpposts', loadChildren:()=>import('./postmodule/post.module').then(m=>m.PostModule)},
+
+
+
   { path: 'forms', component: TemplateDrivenFormComponent },
   { path: 'reactiveforms', component: ReavtiveFormsComponent },
   // { path: 'filterpipes', component: FilterPipesComponent },

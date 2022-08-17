@@ -9,8 +9,12 @@ import { EditUserComponent } from '../edit-user/edit-user.component';
 import { DeactivateauthguardGuard } from '../Services/guards/deactivateauthguard.guard';
 
 const routes: Routes = [{
-  path: 'users', component: UsersComponent,
-  //Note: - canActivate:[AuthguardGuard] will guard Parent-Chilren Components 
+//if we define the initial route name in the lazyloading then keep the initial name as "" 
+ // path: 'users', component: UsersComponent,
+  path: '', component: UsersComponent,
+  
+ 
+ //Note: - canActivate:[AuthguardGuard] will guard Parent-Chilren Components 
   canActivate: [AuthTokenGuard],
 
   //Note: - canActivateChild:[AuthguardGuard] will guard Parent's Chilrens Components 

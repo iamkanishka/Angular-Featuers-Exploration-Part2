@@ -42,10 +42,12 @@ import { CoreModule } from './coremodule/core.module';
   ],
   imports: [
     BrowserModule,
-    UsermoduleModule,
     FilterModule,
     CoreModule,
-    PostModule,
+    //If we import Users and  Post module using lazyLoading, then we dont need to import  Users and  Post module in the AppModule,
+    // we need to import them in the app-routing.mdoule.ts file
+    // UsermoduleModule,
+    // PostModule,
     AuthModule,
     AppRoutingModule,
     FormsModule,
