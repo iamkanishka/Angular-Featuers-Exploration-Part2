@@ -44,7 +44,7 @@
 <!-- Showcasing of commonmodule in users module to run basic commnads like ngFor and ngIf -->
 <ul class="nav flex-column">
 <li class="nav-item" *ngFor="let user of usersData" >
-    <a class="nav-link"  [routerLink]="['/users/user',1,user]" [queryParams]="{page:1,search:user}" >Get {{user}} Details</a>
+    <a class="nav-link"  [routerLink]="['/users/user',1,user]" [queryParams]="{page:1,search:user}" >Get {{user | shortwords:3 }} Details</a>
 </li>
 </ul>
 

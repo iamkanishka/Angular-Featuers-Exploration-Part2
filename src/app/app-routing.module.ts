@@ -8,8 +8,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ReavtiveFormsComponent } from './reavtive-forms/reavtive-forms.component';
-import { FilterPipesComponent } from './filter-pipes/filter-pipes.component';
-
 
 
 
@@ -45,7 +43,7 @@ const routes: Routes = [
 
   { path: 'forms', component: TemplateDrivenFormComponent },
   { path: 'reactiveforms', component: ReavtiveFormsComponent },
-  { path: 'filterpipes', component: FilterPipesComponent },
+  // { path: 'filterpipes', component: FilterPipesComponent },
  // { path: 'httpposts', component: PostsComponent, canActivate:[AuthTokenGuard] },
  // { path: 'auth', component: authComponent },
 

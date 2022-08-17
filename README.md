@@ -155,7 +155,7 @@ Extra Features
 7. Difference Between the Common Module and BrowserModule along with Feature Module in the Angular. 
 8. Adding Routes to the Feature Module. forChild, forRoot differrnces in Router Module.
 9. Add More Feature modules for the Project in the angular.
-10. 
+10. Create Shared Modules. Difference Between Deature Module and Shared Module in angular.
 
 
 # Follow the Below Steps

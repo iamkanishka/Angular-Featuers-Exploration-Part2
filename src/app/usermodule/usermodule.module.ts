@@ -5,19 +5,19 @@ import { UserComponent } from '../user/user.component';
 import { EditUserComponent } from '../edit-user/edit-user.component';
 import { FormsModule } from '@angular/forms';
 import { UsersroutingmoduleModule } from './usersroutingmodule.module';
-
-
+import { SharedModule } from '../sharedmodule/shared.module';
 
 
 @NgModule({
   declarations: [
     UserComponent,
     EditUserComponent,
-    UsersComponent
+    UsersComponent,
+    
   ],
   imports: [
-    CommonModule,
-    FormsModule,
+    
+    SharedModule,
     UsersroutingmoduleModule
 
   ],

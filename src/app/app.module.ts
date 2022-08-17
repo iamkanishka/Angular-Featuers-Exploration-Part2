@@ -11,9 +11,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ReavtiveFormsComponent } from './reavtive-forms/reavtive-forms.component';
-import { FilterPipesComponent } from './filter-pipes/filter-pipes.component';
-import { ShortwordsPipe } from './Pipes/shortwords.pipe';
-import { FilterpipePipe } from './Pipes/filterpipe.pipe';
+
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthinterceptorService } from './Services/authinterceptor/authinterceptor.service';
@@ -26,6 +24,7 @@ import { PlaceholderDirective } from './Shared/placeholder/placeholder.directive
 import { UsermoduleModule } from './usermodule/usermodule.module';
 import { PostModule } from './postmodule/post.module';
 import { AuthModule } from './authmodule/auth.module';
+import { FilterModule } from './filtermodule/filter.module';
 
 
 
@@ -38,9 +37,7 @@ import { AuthModule } from './authmodule/auth.module';
     PageNotFoundComponent,
     TemplateDrivenFormComponent,
     ReavtiveFormsComponent,
-    FilterPipesComponent,
-    ShortwordsPipe,
-    FilterpipePipe,
+  
    //  LoadingSpinnerComponent,
     NavigationComponent,
     AlertModalComponent,
@@ -51,6 +48,7 @@ import { AuthModule } from './authmodule/auth.module';
   imports: [
     BrowserModule,
     UsermoduleModule,
+    FilterModule,
     PostModule,
     AuthModule,
     AppRoutingModule,
