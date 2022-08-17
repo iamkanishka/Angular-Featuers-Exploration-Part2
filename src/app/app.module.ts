@@ -22,6 +22,7 @@ import { PostModule } from './postmodule/post.module';
 import { AuthModule } from './authmodule/auth.module';
 import { FilterModule } from './filtermodule/filter.module';
 import { CoreModule } from './coremodule/core.module';
+import { DummyService } from './dummy/dummy.service';
 
 
 
@@ -54,6 +55,7 @@ import { CoreModule } from './coremodule/core.module';
     ReactiveFormsModule,
     HttpClientModule,
   ],
+ 
 
   bootstrap: [AppComponent]
 })

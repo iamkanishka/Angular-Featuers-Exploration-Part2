@@ -1,5 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
+import { DummyService } from './dummy/dummy.service';
 import { AuthserviceService } from './Services/authservice/authservice.service';
 import { UserserviceService } from './Services/userservice.service';
 
@@ -15,7 +16,7 @@ export class AppComponent implements OnDestroy {
 
   userAddedSubscription!:Subscription
 
-  constructor(private authserviceService:AuthserviceService,private userserviceService:UserserviceService ){
+  constructor(private authserviceService:AuthserviceService,private userserviceService:UserserviceService, private dummyService:DummyService  ){
    // Getting Data from the EventEmitter
     // this.userserviceService.userAddedEvent.subscribe((res:boolean)=>{
     //   this.userAdded=res
@@ -26,6 +27,7 @@ export class AppComponent implements OnDestroy {
 //     this.userAdded=res
 //   })
 
+this.dummyService.printLogMessage('Hi From kanihska from AppModule')
 
 this.authserviceService.autoLogin()
 

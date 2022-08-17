@@ -6,6 +6,7 @@ import { EditUserComponent } from '../edit-user/edit-user.component';
 import { FormsModule } from '@angular/forms';
 import { UsersroutingmoduleModule } from './usersroutingmodule.module';
 import { SharedModule } from '../sharedmodule/shared.module';
+import { DummyService } from '../dummy/dummy.service';
 
 
 @NgModule({
@@ -26,5 +27,6 @@ import { SharedModule } from '../sharedmodule/shared.module';
   //   EditUserComponent,
   //   UsersComponent,
   // ]
+
 })
 export class UsermoduleModule { }

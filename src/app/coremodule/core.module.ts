@@ -11,8 +11,8 @@ import { AuthTokenInterceptorService } from '../Services/auth-token-interceptor/
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthinterceptorService, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: Logginginterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptorService, multi: true }
-
+    { provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptorService, multi: true },
+ 
   ],
   imports: [
     CommonModule

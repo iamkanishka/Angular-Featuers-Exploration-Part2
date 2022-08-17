@@ -158,6 +158,7 @@ Extra Features
 10. Create Shared Modules. Difference Between Deature Module and Shared Module in angular.
 11. Understand Core Module, Move all Services, interceptors from appModule to CoreModule -  Angular.
 12. Implement lazy-Loading for Modules in the Angular to increase the performance of the project.
+13. Loading Service Differently for instances in the lazy Loaded Modules and app Modules - Angular.
 
 
 # Follow the Below Steps

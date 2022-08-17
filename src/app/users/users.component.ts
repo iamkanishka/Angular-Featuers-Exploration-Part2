@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DummyService } from '../dummy/dummy.service';
 import { UserserviceService } from '../Services/userservice.service';
 
 
@@ -12,7 +13,8 @@ export class UsersComponent implements OnInit {
 
   usersData = ['Rama', 'Krishna', 'Leela']
 
-  constructor(private router:Router,private userserviceService:UserserviceService) {
+  constructor(private router:Router,private userserviceService:UserserviceService, private dummyService:DummyService) {
+    this.dummyService.printLogMessage('Hi From kanihska from usersModule')
 
   }
   ngOnInit(): void {
