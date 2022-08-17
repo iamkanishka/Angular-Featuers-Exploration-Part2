@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angularroutingfeatures": {
+    "Angular-Featuers-Exploration-Part2": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angularroutingfeatures",
+            "outputPath": "dist/Angular-Featuers-Exploration-Part2",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -75,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angularroutingfeatures:build:production"
+              "browserTarget": "Angular-Featuers-Exploration-Part2:build:production"
             },
             "development": {
-              "browserTarget": "angularroutingfeatures:build:development"
+              "browserTarget": "Angular-Featuers-Exploration-Part2:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angularroutingfeatures:build"
+            "browserTarget": "Angular-Featuers-Exploration-Part2:build"
           }
         },
         "test": {
@@ -110,5 +110,5 @@
       }
     }
   },
-  "defaultProject": "angularroutingfeatures"
+  "defaultProject": "Angular-Featuers-Exploration-Part2"
 }
