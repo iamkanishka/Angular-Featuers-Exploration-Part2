@@ -156,6 +156,7 @@ Extra Features
 8. Adding Routes to the Feature Module. forChild, forRoot differrnces in Router Module.
 9. Add More Feature modules for the Project in the angular.
 10. Create Shared Modules. Difference Between Deature Module and Shared Module in angular.
+11. Understand Core Module, Move all Services, interceptors from appModule to CoreModule -  Angular.
 
 
 # Follow the Below Steps
